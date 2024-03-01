@@ -1,5 +1,8 @@
 # FinToUp
 
+![](https://github.com/Yigrashill/FinToUp/blob/main/src/Images/Logo/FinToupSmall.png)
+
+
 ## Who I m
 Hi, I'm Tomasz, and I'm a .NET Developer. However, I feel like I've been stuck in the older .NET Framework stack, so I'm want to learn new things like .NET Core 8.0 and React 18. Additionally, I'm interested in expanding my knowledge in DevOps CI/CD, including Docker, pipelines, and more.
 
