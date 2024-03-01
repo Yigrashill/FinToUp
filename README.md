@@ -1,7 +1,7 @@
 # FinToUp
 
-## Who i m
-Hi, I'm Tomasz, and I'm a .NET Developer. However, I feel like I've been stuck in the older .NET Framework, so I'm eager to learn new things in .NET Core 8.0 and React 18. Additionally, I'm interested in expanding my knowledge in DevOps, including Docker, pipelines, and more.
+## Who I m
+Hi, I'm Tomasz, and I'm a .NET Developer. However, I feel like I've been stuck in the older .NET Framework stack, so I'm want to learn new things like .NET Core 8.0 and React 18. Additionally, I'm interested in expanding my knowledge in DevOps CI/CD, including Docker, pipelines, and more.
 
 # What is the FinToUp Project?
 FinToUp is primarily a financial management project that allows users to manage their monthly income and expenditures on a month-by-month basis.
@@ -11,15 +11,21 @@ Most importantly, the project is for me. While it may become publicly visible, I
 
 # Technology in the Project
 ## Backend
-The backend will be a REST API implemented in .NET Core 8.0, utilizing the CQRS pattern.
+The backend will be a REST API implemented in .NET Core 8.0 in the CQRS pattern.
 
 ## Database
-The database will likely be Microsoft SQL Server, employing the Code First approach in the Entity Framework pertaining to .NET.
-Frontend
+The database will likely be Microsoft SQL Server, employing the Code First approach in the Entity Framework.
+
+## Testing 
+I will try to create code by TDD, a approach method.
+
 
 ## DevOPS
 I try to lern more about docker.
+Create CI/CD pipleinees
 And I will be hosting this page on Azure.
 
 ## The frontend
-It will be rendered using React 18 with Axios for HTTP requests. I will explore the possibility of using Flutter for CSS classes and incorporating some pre-built components.
+It will be rendered using React 18 with Axios for HTTP requests.
+I will explore the possibility of using Flutter for CSS classes and incorporating some pre-built components.
+If it will posible in this scope i will try Use Next.js
