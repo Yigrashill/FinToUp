@@ -1,21 +1,20 @@
+using Domain.Models.Common;
+
 namespace Domain.Models;
 
-public class Finance
+public class Finance : BaseEntity
 {
-    public int Id { get; set; }
-    public string Name { get; set; }
+    public string Title { get; set; }
     public FinanceType Type { get; set; }
     public decimal Amount { get; set; } = 0.00M;
-    public DateTime DateTime { get; init; }
 
     public Finance()
     {
-        DateTime = DateTime.Now;
+        base.Createrd = DateTime.Now;
     }
 
     public Finance(DateTime date)
     {
-        DateTime = date;
+        base.Createrd = date;
     }
-
 }

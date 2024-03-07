@@ -1,9 +1,10 @@
-﻿namespace Domain.Models;
+﻿using Domain.Models.Common;
 
-public class MonthlyStatement
+namespace Domain.Models;
+
+public class MonthlyStatement : BaseEntity
 {
-    public int Id { get; set; }
-    public string Name { get; set; }
+    public string Title { get; set; }
     public List<Finance> MonthBalance { get; set; }
     public DateOnly Month { get; set; }
 }
