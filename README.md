@@ -35,17 +35,18 @@ If it will posible in this scope i will try Use Next.js
 
 
 # Sprint 1 (March 1, 2024 → March 17, 2024)
-([x]) Generic and Base Contract repositories in application project.
-([x]) Create new Empty project solution
-([x]) Create Repositories
-([x]) Add Automaper and MadiarR
-([x]) Update Read Me - add to Read me file Sprint 1 baclkog
-([]) Create CQRS Request and Handler
-([]) Fleeten Validation
-([]) Custom Exceptions
-([]) Add Entity Framework and Database Contex
-([]) Add .NET build action in GitHub
-([]) Add Testing Project
-([]) Add testing Action in GitHub
-([]) Add Third party services
-([]) Add Logger
+- [x] Generic and Base Contract repositories in application project.
+- [x] Create new Empty project solution
+- [x] Create Repositories
+- [x] Add Automaper and MediatR
+- [x] Update Read Me - add to Read me file Sprint 1 backlog
+- [ ] Create CQRS Request and Handler
+- [ ] Fleeten Validation
+- [ ] Custom Exceptions
+- [ ] Add Entity Framework and Database Context
+- [ ] Add .NET build action in GitHub
+- [ ] Add Testing Project
+- [ ] Add testing Action in GitHub
+- [ ] Add Third party services
+- [ ] Add Logger
+
