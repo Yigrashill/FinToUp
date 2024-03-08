@@ -39,7 +39,7 @@ To create a plan for this application, I've set up a project in Notion and integ
 ## Working Hours
 
 I work on a daily basis :) so I don't have much time to write applications.
-However, I've set aside about 30 minutes in the morning before heading to work.
+However, I've set aside about 30 minutes in the morning before going to work.
 
 ## Sprint 1 (March 1, 2024 → March 17, 2024)
 - [x] Generic and Base Contract repositories in application project.
