@@ -43,21 +43,21 @@ However, I've set aside about 30 minutes in the morning before going to work.
 
 ## Sprint 1 (March 1, 2024 → March 17, 2024)
 
-:white_check_mark Generic and Base Contract repositories in application project.
-:white_check_mark Create new Empty project solution.
-:white_check_mark Integrate Notion with GitHub to create backlog for task
-:white_check_mark Create Repositories.
-:white_check_mark Add Automaper and MediatR.
-:white_check_mark Update Read Me - add to Read me file Sprint 1 backlog.
-:white_large_square Create CQRS Request and Handler.
+:white_check_mark: Generic and Base Contract repositories in application project.
+:white_check_mark: Create new Empty project solution.
+:white_check_mark: Integrate Notion with GitHub to create backlog for task
+:white_check_mark: Create Repositories.
+:white_check_mark: Add Automaper and MediatR.
+:white_check_mark: Update Read Me - add to Read me file Sprint 1 backlog.
+:white_large_square: Create CQRS Request and Handler.
 :white_large_square Fleeten Validation
-:white_large_square Custom Exceptions
-:white_large_square Add Entity Framework and Database Context
-:white_large_square Add .NET build action in GitHub
-:white_large_square Add Testing Project
-:white_large_square Add testing Action in GitHub
-:white_large_square Add Third party services
-:white_large_square Add Logger
+:white_large_square: Custom Exceptions
+:white_large_square: Add Entity Framework and Database Context
+:white_large_square: Add .NET build action in GitHub
+:white_large_square: Add Testing Project
+:white_large_square: Add testing Action in GitHub
+:white_large_square: Add Third party services
+:white_large_square: Add Logger
 
 
 
