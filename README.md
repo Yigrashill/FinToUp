@@ -36,28 +36,29 @@ If it will posible in this scope i will try Use Next.js
 # Planing
 To create a plan for this application, I've set up a project in Notion and integrated it with GitHub. Whenever I make a pull request to the main or sprint branch with a tag number in the pull request name, I will close the task in Notion. Planning is divided into bi-weekly sprints, and depending on my availability, I'll aim to complete roughly one task per day to maintain the pace of 100 tasks in :100: days and make daily progress. The first sprint is described below.
 
-## Working Hours
+## Working Hours 🕓
 
 I work on a daily basis :) so I don't have much time to write applications.
 However, I've set aside about 30 minutes in the morning before going to work.
 
-## Sprint 1 (March 1, 2024 → March 17, 2024)
-
-:white_check_mark: Generic and Base Contract repositories in application project.
-:white_check_mark: Create new Empty project solution.
-:white_check_mark: Integrate Notion with GitHub to create backlog for task
-:white_check_mark: Create Repositories.
-:white_check_mark: Add Automaper and MediatR.
-:white_check_mark: Update Read Me - add to Read me file Sprint 1 backlog.
-:white_large_square: Create CQRS Request and Handler.
-:white_large_square Fleeten Validation
-:white_large_square: Custom Exceptions
-:white_large_square: Add Entity Framework and Database Context
-:white_large_square: Add .NET build action in GitHub
-:white_large_square: Add Testing Project
-:white_large_square: Add testing Action in GitHub
-:white_large_square: Add Third party services
-:white_large_square: Add Logger
+## Sprint 1 🔵 (March 1, 2024 → March 17, 2024)
+Status | Name
+:---:| ---
+✅| Generic and Base Contract repositories in application project.
+✅| Create new Empty project solution.
+✅| Integrate Notion with GitHub to create backlog for task
+✅| Create Repositories.
+✅| Add Automaper and MediatR.
+✅| Update Read Me - add to Read me file Sprint 1 backlog.
+☑️| Create CQRS Request and Handler.
+⬜️| Fleeten Validation
+⬜️| Custom Exceptions
+⬜️| Add Entity Framework and Database Context
+⬜️| Add .NET build action in GitHub
+⬜️| Add Testing Project
+⬜️| Add testing Action in GitHub
+⬜️| Add Third party services
+⬜️| Add Logger
 
 
 
