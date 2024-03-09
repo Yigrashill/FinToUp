@@ -1,9 +1,13 @@
-﻿using AutoMapper;
+﻿using Application.Features.Finance.Queries;
+using AutoMapper;
+using Domain.Models;
 
-namespace Application.MappingProfiles
+namespace Application.MappingProfiles;
+
+public class FinanceProfile : Profile
 {
-    public class FinanceProfile : Profile
+    public FinanceProfile()
     {
-        // TODO create Mapping profile for DTO Finance
+        CreateMap<FinanceDTO, Finance>().ReverseMap();   
     }
 }
