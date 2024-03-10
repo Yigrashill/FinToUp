@@ -51,8 +51,8 @@ Status | Name
 ✅| Create Repositories.
 ✅| Add Automaper and MediatR.
 ✅| Update Read Me - add to Read me file Sprint 1 backlog.
-☑️| Create CQRS Request and Handler.
-⬜️| Fleeten Validation
+✅| Create CQRS Request and Handler.
+☑️| Fleeten Validation
 ⬜️| Custom Exceptions
 ⬜️| Add Entity Framework and Database Context
 ⬜️| Add .NET build action in GitHub
