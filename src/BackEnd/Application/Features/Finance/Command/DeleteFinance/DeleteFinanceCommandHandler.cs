@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using Application.Contracts.Persistance;
+using Application.Contracts.Exceptions;
 
 namespace Application.Features.Finance.Command.DeleteFinance;
 
@@ -16,7 +17,10 @@ public class DeleteFinanceCommandHandler :IRequestHandler<DeleteCommand, Unit>
     {
         var deleteFinance = await _financeRepository.GetByIdAsync(request.Id);
 
-        // TODO what hapend whan item dont exist in database
+        if (deleteFinance is null)
+        {
+            throw new NotFoundException(nameof(Finance), request.Id);
+        }
 
         await _financeRepository.DeleteAsync(deleteFinance);
 
