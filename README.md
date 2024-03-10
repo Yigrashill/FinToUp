@@ -34,14 +34,15 @@ I will explore the possibility of using Flutter for CSS classes and incorporatin
 If it will posible in this scope i will try Use Next.js
 
 # Planing 🔁
-To create a plan for this application, I've set up a project in Notion and integrated it with GitHub. Whenever I make a pull request to the main or sprint branch with a tag number in the pull request name, I will close the task in Notion. Planning is divided into bi-weekly sprints, and depending on my availability, I'll aim to complete roughly one task per day to maintain the pace of 100 tasks in :100: days and make daily progress. The first sprint is described below.
+To have a plan for this application, I've set up a project in Notion and integrated it with GitHub. Whenever I make a pull request to the main or sprint branch with a tag number in the pull request name, I will close the task in Notion. Planning is divided into two-weekly sprints, and depending on my availability to delivercode, I'll aim to complete roughly one task per day to maintain the pace of 100 tasks in :100: days and have steady daily progress. Beffore I start each sprint I will prepare a list tasks in backlog with inteniton to delivering them witch time frame i panned. Of Corse, everything is in Notion :)
+The first sprint is described below. 
 
-## Working Hours 🕓
 
+### Working Hours 🕓
 I work on a daily basis :) so I don't have much time to write applications.
 However, I've set aside about 30 minutes in the morning before going to work.
 
-## 🔵 Sprint 1  (March 1, 2024 → March 17, 2024)
+### 🔵 Sprint 1  (March 1, 2024 → March 17, 2024)
 
 Status | Name
 :---:| ---
