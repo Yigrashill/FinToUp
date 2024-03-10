@@ -4,12 +4,12 @@ using Application.Contracts.Persistance;
 
 namespace Application.Features.Finance.Command.UpdateCommand;
 
-public class UpdateFinance : IRequestHandler<UpdateFinanceCommand, Unit>
+public class UpdateFinanceCommandHandler : IRequestHandler<UpdateFinanceCommand, Unit>
 {
     private readonly IMapper _mapper;
     private readonly IFinanceRepository _financeRepository;
 
-    public UpdateFinance(IMapper mapper, IFinanceRepository financeRepository)
+    public UpdateFinanceCommandHandler(IMapper mapper, IFinanceRepository financeRepository)
     {
         _mapper = mapper;
         _financeRepository = financeRepository;
