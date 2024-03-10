@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using MediatR;
 using Application.Contracts.Persistance;
+using Application.Contracts.Exceptions;
 
 namespace Application.Features.Finance.Queries.GetFinance;
 
@@ -19,6 +20,11 @@ public class GeFinanceQueryHandler : IRequestHandler<GetFinanceQuery, FinanceDTO
     {
         // TODO Get data from data base
         var finance = await _financeRepository.GetByIdAsync(request.ID);
+
+        if (finance is null)
+        {
+            throw new NotFoundException(nameof(Finance), request.ID);
+        }
 
         // convert data to DTO
         var data = _mapper.Map<FinanceDTO>(finance);

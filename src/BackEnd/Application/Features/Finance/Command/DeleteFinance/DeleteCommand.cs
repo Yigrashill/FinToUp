@@ -1,4 +1,3 @@
-using AutoMapper;
 using MediatR;
 
 namespace Application.Features.Finance.Command.DeleteFinance;
