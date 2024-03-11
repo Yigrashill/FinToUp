@@ -54,8 +54,8 @@ Status | Name
 ✅| Update Read Me - add to Read me file Sprint 1 backlog.
 ✅| Create CQRS Request and Handler.
 ✅| Custom Exceptions
-☑️| Fluent Validation 
-⬜️| Add Entity Framework and Database Context
+✅| Fluent Validation 
+☑️| Add Entity Framework and Database Context
 ⬜️| Add .NET build action in GitHub
 ⬜️| Add Testing Project
 ⬜️| Add testing Action in GitHub
