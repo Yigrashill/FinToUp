@@ -2,9 +2,9 @@
 
 namespace Application.Features.Finance.Command.CreateFinance;
 
-public class CreateFinanceCommandValidation : AbstractValidator<CreateFinanceCommand>
+public class CreateFinanceCommandValidator : AbstractValidator<CreateFinanceCommand>
 {
-    public CreateFinanceCommandValidation()
+    public CreateFinanceCommandValidator()
     {
         RuleFor(f => f.Title)
             .NotEmpty().NotNull().WithMessage("{PropertyName} is requried ")
