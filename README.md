@@ -55,8 +55,8 @@ Status | Name
 ✅| Create CQRS Request and Handler.
 ✅| Custom Exceptions
 ✅| Fluent Validation 
-☑️| Add Entity Framework and Database Context
-⬜️| Add .NET build action in GitHub
+✅| Add Entity Framework and Database Context
+☑️| Add .NET build action in GitHub
 ⬜️| Add Testing Project
 ⬜️| Add testing Action in GitHub
 ⬜️| Add Third party services
