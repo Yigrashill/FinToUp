@@ -18,7 +18,6 @@ public class GeFinanceQueryHandler : IRequestHandler<GetFinanceQuery, FinanceDTO
 
     public async Task<FinanceDTO> Handle(GetFinanceQuery request, CancellationToken cancellationToken)
     {
-        // TODO Get data from data base
         var finance = await _financeRepository.GetByIdAsync(request.ID);
 
         if (finance is null)
