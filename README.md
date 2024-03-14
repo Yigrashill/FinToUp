@@ -49,13 +49,14 @@ Status | Name
 ✅| Generic and Base Contract repositories in application project.
 ✅| Create new Empty project solution.
 ✅| Integrate Notion with GitHub to create backlog for task
-✅| Create Repositories.
+✅| Create Generic repositories.
 ✅| Add Automaper and MediatR.
 ✅| Update Read Me - add to Read me file Sprint 1 backlog.
 ✅| Create CQRS Request and Handler.
 ✅| Custom Exceptions
 ✅| Fluent Validation 
 ✅| Add Entity Framework and Database Context
+✅| Create Repositories.
 ☑️| Add .NET build action in GitHub
 ⬜️| Add Testing Project
 ⬜️| Add testing Action in GitHub
