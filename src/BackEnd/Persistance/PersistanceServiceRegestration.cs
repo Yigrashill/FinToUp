@@ -1,6 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Application.Contracts.Persistance;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Persistance.Repositories;
 
 namespace Persistance;
 
@@ -13,6 +15,9 @@ public static class PersistanceServiceRegestration
         {
             options.UseSqlServer(configuration.GetConnectionString("FinanceConnectionString"));
         });
+
+        services.AddScoped(typeof(IGenericRepository<>), typeof(GenericReporitory<>));
+        services.AddScoped<IFinanceRepository, FinanceRepository> ();
 
         return services;
     }

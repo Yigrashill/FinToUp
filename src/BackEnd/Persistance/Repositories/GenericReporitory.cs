@@ -1,32 +1,41 @@
-﻿
-using Application.Contracts.Persistance;
+﻿using Application.Contracts.Persistance;
+using Microsoft.EntityFrameworkCore;
 
 namespace Persistance.Repositories;
 
 public class GenericReporitory<T> : IGenericRepository<T> where T : class
 {
-    public Task<T> CreateAsync(T entity)
+    protected readonly FinanceDataBaseContext _context;
+
+    public GenericReporitory(FinanceDataBaseContext context)
     {
-        throw new NotImplementedException();
+        _context = context;
     }
 
-    public Task<T> DeleteAsync(T entity)
+    public async Task<T> GetByIdAsync(int id)
     {
-        throw new NotImplementedException();
+        return await _context.Set<T>().FindAsync(id);
     }
 
-    public Task<List<T>> GetAsync()
+    public async Task<IReadOnlyList<T>> GetAsync()
     {
-        throw new NotImplementedException();
+        return await _context.Set<T>().ToListAsync();
     }
 
-    public Task<T> GetByIdAsync(int id)
+    public async Task CreateAsync(T entity)
     {
-        throw new NotImplementedException();
+        await _context.AddAsync(entity);
+        await _context.SaveChangesAsync();
+    }
+    public async Task UpdateAsync(T entity)
+    {
+        _context.Entry(entity).State = EntityState.Modified;
+        await _context.SaveChangesAsync();
     }
 
-    public Task<T> UpdateAsync(T entity)
+    public async Task DeleteAsync(T entity)
     {
-        throw new NotImplementedException();
+         _context.Remove(entity);
+        await _context.SaveChangesAsync();
     }
 }
