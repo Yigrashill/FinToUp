@@ -1,4 +1,5 @@
 ﻿namespace Application.Contracts.Persistance;
+
 public interface IGenericRepository<T> where T : class
 {
     Task<T> GetByIdAsync(int id);
