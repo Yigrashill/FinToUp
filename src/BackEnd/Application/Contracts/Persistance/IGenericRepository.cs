@@ -1,6 +1,8 @@
-﻿namespace Application.Contracts.Persistance;
+﻿using Domain.Models.Common;
 
-public interface IGenericRepository<T> where T : class
+namespace Application.Contracts.Persistance;
+
+public interface IGenericRepository<T> where T : BaseEntity
 {
     Task<T> GetByIdAsync(int id);
     Task<IReadOnlyList<T>> GetAsync();

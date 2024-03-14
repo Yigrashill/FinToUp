@@ -5,14 +5,26 @@ namespace Persistance.Repositories;
 
 public class FinanceRepository : GenericReporitory<Finance>, IFinanceRepository
 {
-    public FinanceRepository(FinanceDataBaseContext context) 
+    private readonly IGenericRepository<Finance> _generic;
+
+    public FinanceRepository(FinanceDataBaseContext context, IGenericRepository<Finance> generic) 
         : base(context)
     {
+        _generic = generic;
     }
 
-    public async Task IncriseFinance(Finance finance)
+    public Task<Finance> GetFinanceDetails(int id)
     {
-        _context.Update(finance);
+        var fin = _generic.GetByIdAsync(id);
+        return fin;
+    }
+
+    public async Task IncriseFinance(int id, decimal incrise = 0.00M)
+    {
+        var fin = await _generic.GetByIdAsync(id);
+        fin.Amount += incrise;
+        _context.Update(fin);
+
         await _context.SaveChangesAsync();
     }
 }

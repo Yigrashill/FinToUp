@@ -1,9 +1,10 @@
 ﻿using Application.Contracts.Persistance;
+using Domain.Models.Common;
 using Microsoft.EntityFrameworkCore;
 
 namespace Persistance.Repositories;
 
-public class GenericReporitory<T> : IGenericRepository<T> where T : class
+public class GenericReporitory<T> : IGenericRepository<T> where T : BaseEntity
 {
     protected readonly FinanceDataBaseContext _context;
 
@@ -14,12 +15,16 @@ public class GenericReporitory<T> : IGenericRepository<T> where T : class
 
     public async Task<T> GetByIdAsync(int id)
     {
-        return await _context.Set<T>().FindAsync(id);
+        return await _context.Set<T>()
+            .AsNoTracking()
+            .FirstOrDefaultAsync(q => q.Id == id);
     }
 
     public async Task<IReadOnlyList<T>> GetAsync()
     {
-        return await _context.Set<T>().ToListAsync();
+        return await _context.Set<T>()
+            .AsNoTracking()
+            .ToListAsync();
     }
 
     public async Task CreateAsync(T entity)
