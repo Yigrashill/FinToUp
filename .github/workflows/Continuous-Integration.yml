@@ -11,7 +11,7 @@ on:
       - 'sprints/*'
 
 jobs:
-  build-backend:
+  Build Backend:
     runs-on: ubuntu-latest
 
     steps:
