@@ -57,8 +57,8 @@ Status | Name
 ✅| Fluent Validation 
 ✅| Add Entity Framework and Database Context
 ✅| Create Repositories.
-☑️| Add .NET build action in GitHub
-⬜️| Add Testing Project
+✅| Add .NET build action in GitHub
+☑️| Add Testing Project
 ⬜️| Add testing Action in GitHub
 ⬜️| Add Third party services
 ⬜️| Add Logger
