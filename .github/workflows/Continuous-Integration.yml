@@ -24,7 +24,7 @@ jobs:
           dotnet-version: '8.0.x'
 
       - name: Restore
-        run: dotnet restore ./src/BackEnd/FintToUp.sln
+        run: dotnet restore ./src/BackEnd/FinToUp.sln 
 
       - name: Build .Net Core
-        run: dotnet build ./src/BackEnd/FintToUp.sln --no-restore
+        run: dotnet build ./src/BackEnd/FinToUp.sln --no-restore
