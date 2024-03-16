@@ -1,0 +1,29 @@
+name: Continuous Integration
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      [ main,'sprints/*' ]
+
+jobs:
+  Build_Backend:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .Net Core
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore
+        run: dotnet restore ./src/BackEnd/FinToUp.sln 
+
+      - name: Build .Net Core
+        run: dotnet build ./src/BackEnd/FinToUp.sln --no-restore
