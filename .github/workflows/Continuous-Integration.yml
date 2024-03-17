@@ -27,3 +27,6 @@ jobs:
 
       - name: Build .Net Core
         run: dotnet build ./src/BackEnd/FinToUp.sln --no-restore
+
+      - name: Test Project
+        run: dotnet test ./src/Test.Test.csproj 
