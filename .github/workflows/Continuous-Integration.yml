@@ -55,4 +55,4 @@ jobs:
           dotnet-version: '8.0.x'
 
       - name: Run tests
-        run: dotnet test ./src/Test/Test.csproj --no-build --no-restore
+        run: dotnet test ./src/Test/Test.csproj --no-restore
