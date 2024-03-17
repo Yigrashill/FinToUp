@@ -18,21 +18,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup .Net Core
+      - name: Setup .NET Core
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.0.x'
 
-      - name: Restore
+      - name: Restore dependencies
         run: dotnet restore ./src/BackEnd/FinToUp.sln
 
-      - name: Build .Net Core
+      - name: Build the project
         run: dotnet build ./src/BackEnd/FinToUp.sln --no-restore --configuration Release
 
-      - name: List Artifacts
-        run: ls -R ./src/BackEnd/FinToUp/bin/Release/
-
-      - name: Upload Artifact
+      - name: Upload built application as an artifact
         uses: actions/upload-artifact@v4
         with:
           name: built-app
@@ -43,16 +40,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Download Artifact
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download built application artifact
         uses: actions/download-artifact@v4
         with:
           name: built-app
           path: ./src/BackEnd/FinToUp/bin/Release/
 
-      - name: Setup .Net Core
+      - name: Setup .NET Core
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.0.x'
 
-      - name: Test Project
+      - name: Run tests
         run: dotnet test ./src/Test/Test.csproj --no-build --no-restore
