@@ -33,7 +33,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: built-app
-          path: ./src/BackEnd/FinToUp/bin/Release/
+          path: ./src/BackEnd/
 
   Test_Backend:
     needs: Build_Backend
@@ -47,7 +47,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: built-app
-          path: ./src/BackEnd/FinToUp/bin/Release/
+          path: ./src/BackEnd/
 
       - name: Setup .NET Core
         uses: actions/setup-dotnet@v4
