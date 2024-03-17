@@ -27,7 +27,7 @@ jobs:
         run: dotnet restore ./src/BackEnd/FinToUp.sln
 
       - name: Build the project
-        run: dotnet build ./src/BackEnd/FinToUp.sln --no-restore --configuration Release
+        run: dotnet build ./src/BackEnd/FinToUp.sln --configuration Release
 
       - name: Upload built application as an artifact
         uses: actions/upload-artifact@v4
