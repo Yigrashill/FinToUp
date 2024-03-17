@@ -29,5 +29,10 @@ jobs:
       - name: Build .Net Core
         run: dotnet build ./src/BackEnd/FinToUp.sln --no-restore
 
+        
+  Test_Project:
+    runs-on: ubuntu-latest
+
+    steps:     
       - name: Test Project
-        run: dotnet test ./src/Test.Test.csproj 
+        run: dotnet test ./src/Test/Test.csproj       
