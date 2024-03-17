@@ -29,6 +29,9 @@ jobs:
       - name: Build .Net Core
         run: dotnet build ./src/BackEnd/FinToUp.sln --no-restore --configuration Release
 
+      - name: List Artifacts
+        run: ls -R ./src/BackEnd/FinToUp/bin/Release/
+
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
