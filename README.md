@@ -42,7 +42,18 @@ The first sprint is described below.
 I work on a daily basis :) so I don't have much time to write applications.
 However, I've set aside about 30 minutes in the morning before going to work.
 
-### 🔵 Sprint 1  (March 1, 2024 → March 17, 2024)
+### 🔵 Sprint 2  (March 18, 2024 → March 31, 2024)
+
+Status | Name
+:---:| ---
+☑️| Task 1.
+⬜| Task 2.
+⬜| Task 3
+
+
+### :large_green_circle: Sprint 1  (March 1, 2024 → March 17, 2024)
+
+ 
 
 Status | Name
 :---:| ---
@@ -58,12 +69,17 @@ Status | Name
 ✅| Add Entity Framework and Database Context
 ✅| Create Repositories.
 ✅| Add .NET build action in GitHub
-☑️| Add Testing Project
-⬜️| Add testing Action in GitHub
+✅| Add Testing Project
+✅| Add testing Action in GitHub
+
+
+ ### ⚪ Backlog
+
+Status | Name
+:---:| ---
 ⬜️| Add Third party services
 ⬜️| Add Logger
-
-
+☑️| Icon
 
 
 
