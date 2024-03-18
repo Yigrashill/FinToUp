@@ -51,9 +51,8 @@ Status | Name
 ⬜| Task 3
 
 
-### :large_green_circle: Sprint 1  (March 1, 2024 → March 17, 2024)
+### 🔵 Sprint 1  (March 1, 2024 → March 17, 2024)
 
- 
 
 Status | Name
 :---:| ---
