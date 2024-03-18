@@ -34,7 +34,7 @@ https://github.com/Yigrashill/FinToUp/actions/workflows/Continuous-Integration.y
 
 
 
-## CI proces is building and testing Backend aplication using currnt Pipline
+## CI proces is building and testing Backend aplication using Pipline
 
 ![Alt text](image.png)
 
