@@ -23,10 +23,22 @@ The database will likely be Microsoft SQL Server, employing the Code First appro
 I will try to create code by TDD, a approach method.
 
 
+
+
 ## DevOPS
-I try to lern more about docker.
-Create CI/CD pipleinees
-And I will be hosting this page on Azure.
+Go Try CI action by Actual Sprint-2 branch
+
+https://github.com/Yigrashill/FinToUp/tree/Sprints/Sprint-2
+
+https://github.com/Yigrashill/FinToUp/actions/workflows/Continuous-Integration.yml
+
+
+
+## CI proces is building and testing Backend aplication using currnt Pipline
+![Alt text](image.png)
+
+
+
 
 ## The frontend
 It will be rendered using React 18 with Axios for HTTP requests.
