@@ -7,7 +7,8 @@ on:
       - main
   pull_request:
     branches:
-      [ main,'sprints/*' ]
+      - main
+      - 'sprints/*'
 
 jobs:
   Build_Backend:
@@ -17,13 +18,41 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup .Net Core
+      - name: Setup .NET Core
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.0.x'
 
-      - name: Restore
-        run: dotnet restore ./src/BackEnd/FinToUp.sln 
+      - name: Restore dependencies
+        run: dotnet restore ./src/BackEnd/FinToUp.sln
 
-      - name: Build .Net Core
-        run: dotnet build ./src/BackEnd/FinToUp.sln --no-restore
+      - name: Build the project
+        run: dotnet build ./src/BackEnd/FinToUp.sln --configuration Release
+
+      - name: Upload built application as an artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: built-app
+          path: ./src/BackEnd/
+
+  Test_Backend:
+    needs: Build_Backend
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download built application artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: built-app
+          path: ./src/BackEnd/
+
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Run tests
+        run: dotnet test ./src/Test/Test.csproj 
