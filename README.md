@@ -44,11 +44,7 @@ However, I've set aside about 30 minutes in the morning before going to work.
 
 ### 🔵 Sprint 2  (March 18, 2024 → March 31, 2024)
 
-Status | Name
-:---:| ---
-☑️| Task 1.
-⬜| Task 2.
-⬜| Task 3
+For actual branch task go to Sprint-2 branch https://github.com/Yigrashill/FinToUp/tree/Sprints/Sprint-2
 
 
 ### 🔵 Sprint 1  (March 1, 2024 → March 17, 2024)
