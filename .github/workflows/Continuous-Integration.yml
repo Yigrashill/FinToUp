@@ -6,7 +6,6 @@ on:
   push:
     branches:
       - main
-      - 'Sprints/*'
   pull_request:
     branches:
       - main
