@@ -5,11 +5,11 @@ on:
   push:
     branches:
       - main
-      - 'sprints/*'
+      - 'Sprints/*'
   pull_request:
     branches:
       - main
-      - 'sprints/*'
+      - 'Sprints/*'
 
 jobs:
   Build_Backend:
@@ -31,7 +31,7 @@ jobs:
         run: dotnet build ./src/BackEnd/FinToUp.sln --configuration Release
 
       - name: Cache built application
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ./src/BackEnd/
           key: ${{ runner.os }}-built-app-${{ github.sha }}
@@ -50,7 +50,7 @@ jobs:
           dotnet-version: '8.0.x'
 
       - name: Restore build cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ./src/BackEnd/
           key: ${{ runner.os }}-built-app-${{ github.sha }}
