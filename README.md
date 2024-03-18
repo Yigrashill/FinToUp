@@ -46,10 +46,18 @@ However, I've set aside about 30 minutes in the morning before going to work.
 
 Status | Name
 :---:| ---
-✅| TASK-72 Edit CI proces to not create artifacts in proces
-☑️| Task 2.
-⬜| Task 3
-
+✅| TASK-72 Edit CI proces to not create artifacts in proces.
+☑️| TASK-76 Develop a memory Repository for test aplication Handlers.
+⬜| TASK-74 Design and implement tests for the "Get All Finances" query handler.
+⬜| TASK-75 Design and implement tests for the "Get Finances by ID" query handler.
+⬜| TASK-76 Design and implement tests for "Create" command handler
+⬜| TASK-78 Design and implement tests for "Update" command handler
+⬜| TASK-79 Design and implement tests for "Delete" command handler
+⬜| TASK-80 Integrate a logging mechanism to enhance debugging and monitoring.
+⬜| TASK-82 Create REST API FinanceController,
+⬜| TASK-83 Develop REST Client tests for the GET All Finance controller action.
+⬜| TASK-84 Develop REST Client tests for the GET By ID.
+⬜| TASK-85 Write some basic documentation how clone, run, and Repository.
 
 ### 🔵 Sprint 1  (March 1, 2024 → March 17, 2024)
 
@@ -76,9 +84,11 @@ Status | Name
 
 Status | Name
 :---:| ---
-⬜️| Add Third party services
-⬜️| Add Logger
-☑️| Icon
+⬜️| TASK- Develop REST Client tests for the Create new finance.
+⬜️| TASK- Develop REST Client tests for the Update finance.
+⬜️| TASK- Develop REST Client tests for the Delete finance.
+⬜️| TASK- Add Entity Framework Code first Data Base
+☑️| Icon Helper
 
 
 
