@@ -61,7 +61,8 @@ Status | Name
 :---:| ---
 ✅| TASK-72 Edit CI proces to not create artifacts in proces.
 ✅| TASK-76 Create Mock of IFinanceRepository.
-☑️| TASK-74 Design and implement tests for the "Get All Finances" query handler.
+✅| TASK-74 Get All Finances Query Handler Test.
+☑️| TASK-87 Get Finance Query Handler Test.
 ⬜| TASK-75 Design and implement tests for the "Get Finances by ID" query handler.
 ⬜| TASK-76 Design and implement tests for "Create" command handler
 ⬜| TASK-78 Design and implement tests for "Update" command handler
