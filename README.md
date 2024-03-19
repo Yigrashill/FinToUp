@@ -73,6 +73,7 @@ Status | Name
 ⬜| TASK-84 Develop REST Client tests for the GET By ID.
 ⬜| TASK-85 Write some basic documentation how clone, run, and Repository.
 
+
 ### 🔵 Sprint 1  (March 1, 2024 → March 17, 2024)
 
 
@@ -103,10 +104,3 @@ Status | Name
 ⬜️| TASK- Develop REST Client tests for the Delete finance.
 ⬜️| TASK- Add Entity Framework Code first Data Base
 ☑️| Icon Helper
-
-
-
-
-
-
-
