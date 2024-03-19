@@ -23,10 +23,23 @@ The database will likely be Microsoft SQL Server, employing the Code First appro
 I will try to create code by TDD, a approach method.
 
 
+
+
 ## DevOPS
-I try to lern more about docker.
-Create CI/CD pipleinees
-And I will be hosting this page on Azure.
+Go Try CI action by Actual Sprint-2 branch
+
+https://github.com/Yigrashill/FinToUp/tree/Sprints/Sprint-2
+
+https://github.com/Yigrashill/FinToUp/actions/workflows/Continuous-Integration.yml
+
+
+
+## CI proces is building and testing Backend aplication using Pipline
+
+![Alt text](image.png)
+
+
+
 
 ## The frontend
 It will be rendered using React 18 with Axios for HTTP requests.
@@ -44,6 +57,21 @@ However, I've set aside about 30 minutes in the morning before going to work.
 
 ### 🔵 Sprint 2  (March 18, 2024 → March 31, 2024)
 
+Status | Name
+:---:| ---
+✅| TASK-72 Edit CI proces to not create artifacts in proces.
+✅| TASK-76 Create Mock of IFinanceRepository.
+✅| TASK-74 Get All Finances Query Handler Test.
+☑️| TASK-87 Get Finance Query Handler Test.
+⬜| TASK-75 Design and implement tests for the "Get Finances by ID" query handler.
+⬜| TASK-76 Design and implement tests for "Create" command handler
+⬜| TASK-78 Design and implement tests for "Update" command handler
+⬜| TASK-79 Design and implement tests for "Delete" command handler
+⬜| TASK-80 Integrate a logging mechanism to enhance debugging and monitoring.
+⬜| TASK-82 Create REST API FinanceController,
+⬜| TASK-83 Develop REST Client tests for the GET All Finance controller action.
+⬜| TASK-84 Develop REST Client tests for the GET By ID.
+⬜| TASK-85 Write some basic documentation how clone, run, and Repository.
 
 
 ### 🔵 Sprint 1  (March 1, 2024 → March 17, 2024)
@@ -71,13 +99,8 @@ Status | Name
 
 Status | Name
 :---:| ---
-⬜️| Add Third party services
-⬜️| Add Logger
-☑️| Icon
-
-
-
-
-
-
-
+⬜️| TASK- Develop REST Client tests for the Create new finance.
+⬜️| TASK- Develop REST Client tests for the Update finance.
+⬜️| TASK- Develop REST Client tests for the Delete finance.
+⬜️| TASK- Add Entity Framework Code first Data Base
+☑️| Icon Helper
