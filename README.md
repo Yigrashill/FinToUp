@@ -60,8 +60,8 @@ However, I've set aside about 30 minutes in the morning before going to work.
 Status | Name
 :---:| ---
 ✅| TASK-72 Edit CI proces to not create artifacts in proces.
-☑️| TASK-76 Develop a memory Repository for test aplication Handlers.
-⬜| TASK-74 Design and implement tests for the "Get All Finances" query handler.
+✅| TASK-76 Create Mock of IFinanceRepository.
+☑️| TASK-74 Design and implement tests for the "Get All Finances" query handler.
 ⬜| TASK-75 Design and implement tests for the "Get Finances by ID" query handler.
 ⬜| TASK-76 Design and implement tests for "Create" command handler
 ⬜| TASK-78 Design and implement tests for "Update" command handler
