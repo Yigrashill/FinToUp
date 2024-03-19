@@ -3,7 +3,7 @@
 public class NotFoundException : Exception
 {
     public NotFoundException(string name, object key) 
-        :base($"{name} ({key}) wos not found")
+        :base($"{name} in ({key}) wos not found")
     {
     }
 }
