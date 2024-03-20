@@ -24,6 +24,15 @@ public class MockFinanceRepository
 
         var mockRepo = new Mock<IFinanceRepository>();
 
+        // Mock GetFinanceById
+        #pragma warning disable CS8620 // Argument cannot be used for parameter due to differences in the nullability of reference types.
+        mockRepo.Setup(m => m.GetByIdAsync(It.IsAny<int>()))
+            .ReturnsAsync((int id) =>
+            {
+                return finances.FirstOrDefault(f => f.Id == id);
+            });
+        #pragma warning restore CS8620 // Argument cannot be used for parameter due to differences in the nullability of reference types.
+
         // Mock GetAllFinance
         mockRepo.Setup(m => m.GetAsync()).ReturnsAsync(finances);
 

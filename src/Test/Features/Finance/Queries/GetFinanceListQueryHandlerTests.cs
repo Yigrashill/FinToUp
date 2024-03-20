@@ -58,7 +58,9 @@ public class GetFinanceListQueryHandlerTests
     public async Task GetAllFinancesQueryHandler_Should_Throw_NotFoundException()
     {
         // Arrange
-        _mockRepo.Setup(m => m.GetAsync()).ReturnsAsync(() => null); 
+        #pragma warning disable CS8603 // Possible null reference return.
+        _mockRepo.Setup(m => m.GetAsync()).ReturnsAsync(() => null);
+        #pragma warning restore CS8603 // Possible null reference return.
         var handler = new GetAllFinancesQueryHandler(_mapper, _mockRepo.Object);
 
         // Act & Assert
