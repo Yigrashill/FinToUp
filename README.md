@@ -57,6 +57,7 @@ However, I've set aside about 30 minutes in the morning before going to work.
 
 ### 🔵 Sprint 2  (March 18, 2024 → March 31, 2024)
 
+
 Status | Name
 :---:| ---
 ✅| TASK-72 Edit CI proces to not create artifacts in proces.
