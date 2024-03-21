@@ -1,26 +1,23 @@
-﻿using Moq;
-using Test.Mocks;
-using AutoMapper;
-using Shouldly;
-using Application.Contracts.Persistance;
+﻿using Application.Contracts.Persistance;
 using Application.MappingProfiles;
 using Application.Features.Finance.Command.CreateFinance;
 using Application.Features.Finance.Queries;
+using Application.Contracts.Exceptions;
 
 namespace Test.Features.Finance.Commands;
 
 public class CreateFinanceCommandHandlerTest
 {
-    private IMapper _mapper;
+    private readonly IMapper _mapper;
     private readonly Mock<IFinanceRepository> _mockRepo;
 
     public CreateFinanceCommandHandlerTest()
     {
         _mockRepo = MockFinanceRepository.GetMockFinanceRepository();
 
-        var mapperConfig = new MapperConfiguration(m =>
+        var mapperConfig = new MapperConfiguration(map =>
         {
-            m.AddProfile<FinanceProfile>();
+            map.AddProfile<FinanceProfile>();
         });
 
         _mapper = mapperConfig.CreateMapper();
@@ -50,9 +47,45 @@ public class CreateFinanceCommandHandlerTest
         result.ShouldBeOfType<int>();
     }
 
-    // CreateFinanceCommandHandler_Shound_Reeturn_Error When Title is empty or null
-    // CreateFinanceCommandHandler_Shound_Reeturn_Error When Title have more than 70 characters
-    
+    [Theory]
+    [InlineData("")]
+    [InlineData(null)]
+    public async Task CreateFinanceCommandHandler_Should_Return_Error_When_Title_Is_Empty_Or_Null(string title)
+    {
+        // Arrange
+        var handler = new CreateFinanceCommandHandler(_mapper, _mockRepo.Object);
+        var newFinance = new CreateFinanceCommand()
+        {
+            Title = title,
+            Amount = 1.00M,
+            FinanceType = FinanceTypeDTO.Liabilities
+        };
 
+        // Act & Assert
+        await Should.ThrowAsync<BadRequestException>(async () =>
+        {
+            await handler.Handle(newFinance, CancellationToken.None);
+        });
+    }
+
+    [Fact]
+    public async Task CreateFinanceCommandHandler_Should_Return_Error_When_Title_Exceeds_70_Characters()
+    {
+        // Arrange
+        var handler = new CreateFinanceCommandHandler(_mapper, _mockRepo.Object);
+        var longTitle = new string('A', 71); 
+        var newFinance = new CreateFinanceCommand()
+        {
+            Title = longTitle,
+            Amount = 1.00M,
+            FinanceType = FinanceTypeDTO.Liabilities
+        };
+
+        // Act & Assert
+        await Should.ThrowAsync<BadRequestException>(async () =>
+        {
+            await handler.Handle(newFinance, CancellationToken.None);
+        });
+    }
 
 }

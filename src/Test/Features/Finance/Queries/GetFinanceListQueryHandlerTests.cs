@@ -1,10 +1,6 @@
-using Moq;
-using Test.Mocks;
-using AutoMapper;
 using Application.Contracts.Persistance;
 using Application.MappingProfiles;
 using Application.Features.Finance.Queries.GetAllFinances;
-using Shouldly;
 using Application.Features.Finance.Queries;
 using Application.Contracts.Exceptions;
 
@@ -13,7 +9,7 @@ namespace Test.Features.Finance.Queries;
 public class GetFinanceListQueryHandlerTests
 {
     private readonly Mock<IFinanceRepository> _mockRepo;
-    private IMapper _mapper;
+    private readonly IMapper _mapper;
 
 
     public GetFinanceListQueryHandlerTests()
