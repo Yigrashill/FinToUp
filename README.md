@@ -64,8 +64,8 @@ Status | Name
 ✅| TASK-76 Create Mock of IFinanceRepository.
 ✅| TASK-74 Get All Finances Query Handler Test.
 ✅| TASK-87 Create Finance Query Handler Test.
-☑️| TASK-75 Create Test for Create Finance Command Handler.
-⬜| TASK-76 Create Test for Update Finance Command Handler.
+✅| TASK-75 Create Test for Create Finance Command Handler.
+☑️| TASK-76 Create Test for Update Finance Command Handler.
 ⬜| TASK-78 Create Test for Delete Finance Command Handler.
 ⬜| TASK-79 Design and implement tests for "Delete" command handler
 ⬜| TASK-80 Integrate a logging mechanism to enhance debugging and monitoring.
