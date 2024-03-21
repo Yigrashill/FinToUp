@@ -3,10 +3,7 @@ using Test.Mocks;
 using AutoMapper;
 using Application.Contracts.Persistance;
 using Application.MappingProfiles;
-using Application.Features.Finance.Queries.GetAllFinances;
-using Shouldly;
 using Application.Features.Finance.Queries;
-using Application.Contracts.Exceptions;
 using Application.Features.Finance.Queries.GetFinance;
 
 namespace Test.Features.Finance.Queries;

@@ -1,6 +1,5 @@
 ﻿using Application.Contracts.Persistance;
 using Domain.Models;
-using Moq;
 
 namespace Test.Mocks;
 
