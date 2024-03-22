@@ -57,17 +57,17 @@ However, I've set aside about 30 minutes in the morning before going to work.
 
 ### 🔵 Sprint 2  (March 18, 2024 → March 31, 2024)
 
+
 Status | Name
 :---:| ---
 ✅| TASK-72 Edit CI proces to not create artifacts in proces.
 ✅| TASK-76 Create Mock of IFinanceRepository.
 ✅| TASK-74 Get All Finances Query Handler Test.
-☑️| TASK-87 Get Finance Query Handler Test.
-⬜| TASK-75 Design and implement tests for the "Get Finances by ID" query handler.
-⬜| TASK-76 Design and implement tests for "Create" command handler
-⬜| TASK-78 Design and implement tests for "Update" command handler
-⬜| TASK-79 Design and implement tests for "Delete" command handler
-⬜| TASK-80 Integrate a logging mechanism to enhance debugging and monitoring.
+✅| TASK-87 Create Finance Query Handler Test.
+✅| TASK-75 Create Test for Create Finance Command Handler.
+✅| TASK-78 Create Test for Update Finance Command Handler.
+☑️| TASK-79 Create Test for Deleate Finance Command Handler.
+⬜| TASK-80 Add Logger
 ⬜| TASK-82 Create REST API FinanceController,
 ⬜| TASK-83 Develop REST Client tests for the GET All Finance controller action.
 ⬜| TASK-84 Develop REST Client tests for the GET By ID.

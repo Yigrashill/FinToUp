@@ -1,5 +1,4 @@
-﻿
-using FluentValidation.Results;
+﻿using FluentValidation.Results;
 
 namespace Application.Contracts.Exceptions;
 
@@ -8,8 +7,9 @@ public class BadRequestException : Exception
     public BadRequestException(string message) 
         : base(message) 
     {
-        // TODO can return some 400 status code.
+        // TODO can return some error status 400 status code.
         // Can return some Validation Value
+        // Can return some Individual Error Class not only message
     }
 
     public BadRequestException(string message, ValidationResult validationResult)

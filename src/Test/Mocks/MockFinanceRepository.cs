@@ -1,6 +1,5 @@
 ﻿using Application.Contracts.Persistance;
 using Domain.Models;
-using Moq;
 
 namespace Test.Mocks;
 
@@ -24,6 +23,15 @@ public class MockFinanceRepository
 
         var mockRepo = new Mock<IFinanceRepository>();
 
+        // Mock GetFinanceById
+        #pragma warning disable CS8620 // Argument cannot be used for parameter due to differences in the nullability of reference types.
+        mockRepo.Setup(m => m.GetByIdAsync(It.IsAny<int>()))
+            .ReturnsAsync((int id) =>
+            {
+                return finances.FirstOrDefault(f => f.Id == id);
+            });
+        #pragma warning restore CS8620 // Argument cannot be used for parameter due to differences in the nullability of reference types.
+
         // Mock GetAllFinance
         mockRepo.Setup(m => m.GetAsync()).ReturnsAsync(finances);
 
@@ -34,6 +42,19 @@ public class MockFinanceRepository
                 finances.Add(finance);
                 return Task.CompletedTask;
             });
+
+        // Mock Update Finance
+        mockRepo.Setup(m => m.UpdateAsync(It.IsAny<Finance>()))
+            .Returns((Finance finance) =>
+            {
+                var item = finances.FirstOrDefault(x => x.Id == finance.Id) ?? new Finance();
+                item.Title = finance.Title;
+                item.Amount = finance.Amount;
+                item.FinanceType = finance.FinanceType;
+                item.Updated = DateTime.Now;
+                return Task.CompletedTask;
+            });
+
 
         return mockRepo;
     }
