@@ -50,7 +50,7 @@ public class CreateFinanceCommandHandlerTest
     [Theory]
     [InlineData("")]
     [InlineData(null)]
-    public async Task CreateFinanceCommandHandler_Should_Return_Error_When_Title_Is_Empty_Or_Null(string title)
+    public async Task CreateFinanceCommandHandler_Should_Return_Error_When_Title_Is_Empty_Or_Null(string? title)
     {
         // Arrange
         var handler = new CreateFinanceCommandHandler(_mapper, _mockRepo.Object);

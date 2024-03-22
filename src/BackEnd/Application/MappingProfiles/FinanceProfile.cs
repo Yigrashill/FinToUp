@@ -12,6 +12,6 @@ public class FinanceProfile : Profile
     {
         CreateMap<FinanceDTO, Finance>().ReverseMap();
         CreateMap<CreateFinanceCommand, Finance>();
-        CreateMap<UpdateFinanceCommand,Finance>();
+        CreateMap<UpdateFinanceCommand, Finance>().ReverseMap();
     }
 }

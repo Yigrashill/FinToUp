@@ -18,7 +18,9 @@ public class CreateFinanceCommandHandler : IRequestHandler<CreateFinanceCommand,
 
     public async Task<int> Handle(CreateFinanceCommand request, CancellationToken cancellationToken)
     {
+        // TODO make validator like common service
         // TODO crerate validate service and inject in contructor
+
         // Validate data
         var validator = new CreateFinanceCommandValidator();
         var validationResult = await validator.ValidateAsync(request, cancellationToken);

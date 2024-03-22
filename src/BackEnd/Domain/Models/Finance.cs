@@ -6,7 +6,7 @@ public class Finance : BaseEntity
 {
     public string Title { get; set; }
     public FinanceType FinanceType { get; set; }
-    public decimal Amount { get; set; } = 0.00M;
+    public decimal? Amount { get; set; } = 0.00M;
 
     public Finance()
     {
