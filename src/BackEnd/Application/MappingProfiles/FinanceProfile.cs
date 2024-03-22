@@ -1,4 +1,5 @@
 ﻿using Application.Features.Finance.Command.CreateFinance;
+using Application.Features.Finance.Command.UpdateCommand;
 using Application.Features.Finance.Queries;
 using AutoMapper;
 using Domain.Models;
@@ -11,5 +12,6 @@ public class FinanceProfile : Profile
     {
         CreateMap<FinanceDTO, Finance>().ReverseMap();
         CreateMap<CreateFinanceCommand, Finance>();
+        CreateMap<UpdateFinanceCommand, Finance>().ReverseMap();
     }
 }

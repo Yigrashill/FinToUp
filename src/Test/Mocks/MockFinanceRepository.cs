@@ -43,6 +43,19 @@ public class MockFinanceRepository
                 return Task.CompletedTask;
             });
 
+        // Mock Update Finance
+        mockRepo.Setup(m => m.UpdateAsync(It.IsAny<Finance>()))
+            .Returns((Finance finance) =>
+            {
+                var item = finances.FirstOrDefault(x => x.Id == finance.Id) ?? new Finance();
+                item.Title = finance.Title;
+                item.Amount = finance.Amount;
+                item.FinanceType = finance.FinanceType;
+                item.Updated = DateTime.Now;
+                return Task.CompletedTask;
+            });
+
+
         return mockRepo;
     }
 }
