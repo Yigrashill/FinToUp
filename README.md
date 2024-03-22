@@ -65,8 +65,8 @@ Status | Name
 ✅| TASK-74 Get All Finances Query Handler Test.
 ✅| TASK-87 Create Finance Query Handler Test.
 ✅| TASK-75 Create Test for Create Finance Command Handler.
-☑️| TASK-78 Create Test for Update Finance Command Handler.
-⬜| TASK-79 Create Test for Deleate Finance Command Handler.
+✅| TASK-78 Create Test for Update Finance Command Handler.
+☑️| TASK-79 Create Test for Deleate Finance Command Handler.
 ⬜| TASK-80 Add Logger
 ⬜| TASK-82 Create REST API FinanceController,
 ⬜| TASK-83 Develop REST Client tests for the GET All Finance controller action.
