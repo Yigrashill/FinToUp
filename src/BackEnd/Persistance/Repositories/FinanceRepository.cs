@@ -27,4 +27,14 @@ public class FinanceRepository : GenericReporitory<Finance>, IFinanceRepository
 
         await _context.SaveChangesAsync();
     }
+
+
+    public async Task DeketeFinance(int id)
+    {
+        var finance = await _generic.GetByIdAsync(id);
+        _context.Remove(finance);
+
+        await _context.SaveChangesAsync();
+    }
+
 }
