@@ -45,7 +45,9 @@ public class UpdateFinanceCommandHandlerTest
 
         // Assert
         newFinance.Title.ShouldBeSameAs(newFinanceCommand.Title);
+        #pragma warning disable CS8629 // Nullable value type may be null.
         newFinance.Amount.Value.ShouldBe(newFinanceCommand.Amount.Value);
+        #pragma warning restore CS8629 // Nullable value type may be null.
         newFinance.FinanceType.ShouldBe(newFinance.FinanceType);
     }
 
@@ -54,7 +56,8 @@ public class UpdateFinanceCommandHandlerTest
     [InlineData("")]
     [InlineData(null)]
     public async Task UpdateFinanceCommandhandle_Should_Return_Error_When_Title_Is_Empty_Or_Null(string? title)
-    { 
+    {   
+        // Arrange
         var handler = new UpdateFinanceCommandHandler(_mapper, _mockRepo.Object);
         var newFinanceCommand = new UpdateFinanceCommand()
         {
@@ -64,6 +67,7 @@ public class UpdateFinanceCommandHandlerTest
             FinanceType = FinanceType.Liabilities,
         };
 
+        // Act & Assert
         await Should.ThrowAsync<BadRequestException>(async () =>
         {
             await handler.Handle(newFinanceCommand, CancellationToken.None);
