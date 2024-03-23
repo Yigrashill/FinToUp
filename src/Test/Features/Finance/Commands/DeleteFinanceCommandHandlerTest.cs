@@ -25,9 +25,10 @@ public class DeleteFinanceCommandHandlerTest
         await handler.Handle(new DeleteFinanceCommand(1), CancellationToken.None);
         var repoItems2 = await _mockRepo.Object.GetAsync();
         var actualItemCount2 = repoItems2.Count();
+        var result = actualItemCount - 1;
 
         // Assert
-        actualItemCount2.ShouldBe(actualItemCount -1);
+        actualItemCount2.ShouldBe(result);
     }
 
     [Fact]

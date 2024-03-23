@@ -55,7 +55,14 @@ public class MockFinanceRepository
                 return Task.CompletedTask;
             });
 
-        
+        // Mock Delete Finance
+        mockRepo.Setup(m => m.DeleteAsync(It.IsAny<Finance>()))
+             .Returns((Finance finance) =>
+             {
+                 var finance2 = finances.FirstOrDefault(f => f.Id == finance.Id);
+                 finances.Remove(finance2);
+                 return Task.CompletedTask;
+             });
 
 
         return mockRepo;
