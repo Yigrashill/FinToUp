@@ -20,3 +20,6 @@ dotnet_analyzer_diagnostic.category-Style.severity = none
 
 # CS8620: Argument cannot be used for parameter due to differences in the nullability of reference types.
 dotnet_diagnostic.CS8620.severity = none
+
+# CS8629: Nullable value type may be null.
+dotnet_diagnostic.CS8629.severity = none

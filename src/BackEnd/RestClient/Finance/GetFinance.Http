@@ -1,0 +1,11 @@
+@host = http://localhost
+@port = 5000
+@API_HostAddress = {{host}}:{{port}}
+
+
+Get {{API_HostAddress}}/api/finances
+
+###
+
+Get {{API_HostAddress}}/api/finances/1
+
