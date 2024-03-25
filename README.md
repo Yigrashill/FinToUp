@@ -69,8 +69,8 @@ Status | Name
 ✅| TASK-79 Create Test for Deleate Finance Command Handler.
 ✅| TASK-80 Add Logger
 ✅| TASK-82 Create REST API FinanceController,
-☑️| TASK-83 TASK-83 Http GetAll From API Controller
-⬜| TASK-84 Develop REST Client tests for the GET By ID.
+✅| TASK-83 Http GetAll From API Controller
+☑️| TASK-84 Create Mock for Test database in Memory.
 ⬜| TASK-85 Write some basic documentation how clone, run, and Repository.
 
 
