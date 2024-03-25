@@ -12,10 +12,10 @@ public class GetFinancesQueryHandler : IRequestHandler<GetFinancesQuery, List<Fi
     private readonly IAppLogger<GetFinancesQueryHandler> _logger;
     private readonly IFinanceRepository _financeRepository;
 
-    public GetFinancesQueryHandler(IMapper mapper,/* IAppLogger<GetFinancesQueryHandler> logger,*/ IFinanceRepository financeRepository)
+    public GetFinancesQueryHandler(IMapper mapper, IAppLogger<GetFinancesQueryHandler> logger, IFinanceRepository financeRepository)
     {
         _mapper = mapper;
-        //_logger = logger;
+        _logger = logger;
         _financeRepository = financeRepository;
     }
 
@@ -27,13 +27,13 @@ public class GetFinancesQueryHandler : IRequestHandler<GetFinancesQuery, List<Fi
         // Throw new exception when is no data in repository;
         if (finances is null)
         {
-            //_logger.LogInformation("$\"{name} in now wos not found\"");
+            _logger.LogInformation("$\"{name} in now wos not found\"");
             throw new NotFoundException(nameof(Finance), nameof(GetFinancesQueryHandler));
         }
 
         var data = _mapper.Map<List<FinanceDTO>>(finances);
 
-        //_logger.LogInformation("Finances wos return successfully");
+        _logger.LogInformation("Finances wos return successfully");
         return data;
     }
  }
