@@ -12,7 +12,7 @@ public class FinanceControllerTest : IClassFixture<WebApplicationFactory<Program
 {
     private readonly WebApplicationFactory<Program> _factory;
 
-    public FinanceControllerTest(WebApplicationFactory<Program> factory)
+    public FinanceControllerTest()
     {
         _factory = new WebApplicationFactory<Program>().WithWebHostBuilder(builder =>
         {
@@ -35,18 +35,16 @@ public class FinanceControllerTest : IClassFixture<WebApplicationFactory<Program
 
             // ADD new Object if You need
             // Object is Created in FinanceDataBaseContext
-            //dbContext.Finances.Add(new Domain.Models.Finance()
-            //    { 
-            //        Title = "Biedronka",
-            //        Amount = 200.00M,
-            //        FinanceType = Domain.Models.FinanceType.Liabilities,
-            //        Createrd = DateTime.UtcNow,
-            //    });
+            dbContext.Finances.Add(new Domain.Models.Finance()
+            {
+                Title = "Biedronka",
+                Amount = 200.00M,
+                FinanceType = Domain.Models.FinanceType.Liabilities,
+                Createrd = DateTime.UtcNow,
+            });
 
             dbContext.SaveChanges();
         }
-
-
     }
 
 
@@ -57,7 +55,7 @@ public class FinanceControllerTest : IClassFixture<WebApplicationFactory<Program
         var client = _factory.CreateClient();
 
         // Act
-        var response = await client.GetAsync("/api/finances/1");
+        var response = await client.GetAsync(ApiUrl.Finances(1));
         var result = await response.Content.ReadFromJsonAsync<FinanceDTO>();
 
         // Assert
@@ -72,7 +70,7 @@ public class FinanceControllerTest : IClassFixture<WebApplicationFactory<Program
         var client = _factory.CreateClient();
 
         // Act
-        var response = await client.GetAsync("/api/finances/");
+        var response = await client.GetAsync(ApiUrl.Finances());
         var textResult = await response.Content.ReadAsStringAsync();
         var result = await response.Content.ReadFromJsonAsync<List<FinanceDTO>>();
 
@@ -81,4 +79,3 @@ public class FinanceControllerTest : IClassFixture<WebApplicationFactory<Program
         result.ShouldBeOfType<List<FinanceDTO>>();
     }
 }
-
