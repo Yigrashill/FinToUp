@@ -68,10 +68,16 @@ Status | Name
 ✅| TASK-78 Create Test for Update Finance Command Handler.
 ✅| TASK-79 Create Test for Deleate Finance Command Handler.
 ✅| TASK-80 Add Logger
-✅| TASK-82 Create REST API FinanceController,
+✅| TASK-82 Create REST API FinanceController
 ✅| TASK-83 Http GetAll From API Controller
-☑️| TASK-84 Create Mock for Test database in Memory.
-⬜| TASK-85 Write some basic documentation how clone, run, and Repository.
+✅| TASK-84 Create FinanceController Integration Test
+☑️| TASK-85 Implement Create Method in FinanceController
+⬜| TASK-86 Test Create Method in FinanceController
+⬜| TASK-89 Implement Update Method in FinanceController
+⬜| TASK-90 Test Update Method in FinanceController
+⬜| TASK-91 Implement Delete Method in FinanceController
+⬜| TASK-92 Test Delete Method in FinanceController
+⬜| TASK-93 Write Some base documentation, what you alredy build in March
 
 
 ### 🔵 Sprint 1  (March 1, 2024 → March 17, 2024)

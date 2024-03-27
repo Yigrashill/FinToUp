@@ -3,8 +3,8 @@
 public class FinanceDTO
 {
     public int Id { get; set; }
-    public DateTime? Createrd { get; }
-    public DateTime? Updated { get; }
+    public DateTime? Createrd { get; set; }
+    public DateTime? Updated { get; set; }
     public string? Title { get; set; }
     public FinanceTypeDTO FinanceType { get; set; }
     public decimal Amount { get; set; } = 0.00M;
