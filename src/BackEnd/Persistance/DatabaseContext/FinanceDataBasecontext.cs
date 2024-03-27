@@ -35,8 +35,8 @@ public class FinanceDataBaseContext : DbContext
             {
                 Id = 2,
                 Title = "Wypłata",
-                Createrd = DateTime.Now,
-                FinanceType = FinanceType.Liabilities,
+                Createrd = DateTime.UtcNow,
+                FinanceType = FinanceType.Assets,
                 Amount = 1000.00M
             }
             );
@@ -48,8 +48,7 @@ public class FinanceDataBaseContext : DbContext
     public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
     {
         foreach (var entity in base.ChangeTracker.Entries<BaseEntity>()
-            .Where(q => q.State == EntityState.Modified || q.State == EntityState.Added)
-            )
+            .Where(q => q.State == EntityState.Modified || q.State == EntityState.Added))
         {
             entity.Entity.Updated = DateTime.Now;
 
