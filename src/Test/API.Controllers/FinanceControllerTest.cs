@@ -77,7 +77,6 @@ public class FinanceControllerTest : IClassFixture<WebApplicationFactory<Program
         var result = await response.Content.ReadFromJsonAsync<List<FinanceDTO>>();
 
         // Assert
-        // TODO Mock Database Finance context
         response.StatusCode.ShouldBe(System.Net.HttpStatusCode.OK);
         result.ShouldBeOfType<List<FinanceDTO>>();
     }
