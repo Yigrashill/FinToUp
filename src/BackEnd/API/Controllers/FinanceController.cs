@@ -1,10 +1,10 @@
-﻿using Application.Contracts.Logging;
+﻿using MediatR;
+using Microsoft.AspNetCore.Mvc;
+using Application.Contracts.Logging;
+using Application.Features.Finance.Command.UpdateCommand;
 using Application.Features.Finance.Queries;
 using Application.Features.Finance.Queries.GetFinance;
 using Application.Features.Finance.Queries.GetFinances;
-using Domain.Models;
-using MediatR;
-using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers;
 
@@ -36,7 +36,6 @@ public class FinanceController : ControllerBase
             _logger.LogWarning(ex.Message);
             return BadRequest(ex.Message);
         }
-
     }
 
     [HttpGet("{id}")]
@@ -56,4 +55,21 @@ public class FinanceController : ControllerBase
         }
     }
 
+    [HttpPut]
+    public async Task<ActionResult> Put(UpdateFinanceCommand command)
+    {
+        try
+        {
+            _ = await _mediator.Send(command);
+            _logger.LogInformation($"Finance: {command.Id} wos updated");
+
+            return NoContent();
+
+        }
+        catch (Exception ex)
+        {
+            _logger.LogWarning(ex.Message);
+            return BadRequest(ex.Message);
+        }
+    }
 }
