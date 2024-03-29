@@ -71,12 +71,12 @@ Status | Name
 ✅| TASK-82 Create REST API FinanceController
 ✅| TASK-83 Http GetAll From API Controller
 ✅| TASK-84 Create FinanceController Integration Test
-☑️| TASK-85 Implement Create Method in FinanceController
-☑️| TASK-86 Test Create Method in FinanceController
+✅| TASK-85 Implement Create Method in FinanceController
+✅| TASK-86 Test Create Method in FinanceController
 ✅| TASK-89 Implement Update Method in FinanceController
-✅|  TASK-90 Test Update Method in FinanceController
-⬜| TASK-91 Implement Delete Method in FinanceController
-⬜| TASK-92 Test Delete Method in FinanceController
+✅| TASK-90 Test Update Method in FinanceController
+☑️| TASK-91 Implement Delete Method in FinanceController
+☑️| TASK-92 Test Delete Method in FinanceController
 ⬜| TASK-93 Write Some base documentation, what you alredy build in March
 
 
