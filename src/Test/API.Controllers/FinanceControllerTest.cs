@@ -1,13 +1,12 @@
-﻿using Application.Features.Finance.Command.CreateFinance;
-using Application.Features.Finance.Command.UpdateCommand;
-using Application.Features.Finance.Queries;
-using Application.Features.Finance.Queries.GetFinance;
+﻿using System.Net.Http.Json;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.AspNetCore.TestHost;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using System.Net.Http.Json;
+using Application.Features.Finance.Queries;
+using Application.Features.Finance.Command.CreateFinance;
+using Application.Features.Finance.Command.UpdateCommand;
 
 namespace Test.Api.Controllers;
 
@@ -83,6 +82,26 @@ public class FinanceControllerTest : IClassFixture<WebApplicationFactory<Program
     }
 
     [Fact]
+    public async Task Post_Request_In_FinanceController_Shoululd_Created_New_Finance_And_Return_Created()
+    {
+        // Arrange
+        var client = _factory.CreateClient();
+        var command = new CreateFinanceCommand
+        {
+            Title = "Nowy Tytuł",
+            Amount = 510.00M,
+            FinanceType = FinanceTypeDTO.Assets
+        };
+
+        // Act
+        var response = await client.PostAsJsonAsync("/api/finances/", command);
+
+
+        // Assert
+        response.StatusCode.ShouldBe(System.Net.HttpStatusCode.Created);
+    }
+
+    [Fact]
     public async Task Put_Request_In_FinanceController_Should_Update_Finance_And_Return_NoContent()
     {
         // Arrange
@@ -103,24 +122,4 @@ public class FinanceControllerTest : IClassFixture<WebApplicationFactory<Program
         response.StatusCode.ShouldBe(System.Net.HttpStatusCode.NoContent);
     }
 
-
-    [Fact]
-    public async Task Post_Request_In_FinanceController_Shoululd_Created_New_Finance_And_Return_Created()
-    {
-        // Arrange
-        var client = _factory.CreateClient();
-        var command = new CreateFinanceCommand
-        {
-            Title = "Nowy Tytuł",
-            Amount = 510.00M,
-            FinanceType = FinanceTypeDTO.Assets
-        };
-
-        // Act
-        var response = await client.PostAsJsonAsync("/api/finances/", command);
-
-
-        // Assert
-        response.StatusCode.ShouldBe(System.Net.HttpStatusCode.Created);
-    }
 }
