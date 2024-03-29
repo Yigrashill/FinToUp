@@ -3,9 +3,27 @@
 @API_HostAddress = {{host}}:{{port}}
 
 
-Get {{API_HostAddress}}/api/finances
 
 ###
+# Get all finances
+Get {{API_HostAddress}}/api/finances
 
+
+
+###
+# Get finance by id 
 Get {{API_HostAddress}}/api/finances/1
 
+
+
+###
+# Update finance
+PUT {{API_HostAddress}}/api/finances
+Content-Type: application/json
+
+{
+  "id": 1,
+  "title": "Zaktualizowany Tytuł",
+  "amount": 520.00,
+  "financeType": 2
+}

@@ -5,6 +5,8 @@ using Application.Features.Finance.Command.UpdateCommand;
 using Application.Features.Finance.Queries;
 using Application.Features.Finance.Queries.GetFinance;
 using Application.Features.Finance.Queries.GetFinances;
+using Application.Features.Finance.Command.CreateFinance;
+using Application.Features.Finance.Command.DeleteFinance;
 
 namespace API.Controllers;
 
@@ -26,10 +28,10 @@ public class FinanceController : ControllerBase
     {
         try
         {
-            var finances = await _mediator.Send(new GetFinancesQuery());
-
-            _logger.LogInformation("Return all finances", finances);
-            return Ok(finances);
+            var result = await _mediator.Send(new GetFinancesQuery());
+            _logger.LogInformation("Return all finances", result);
+            
+            return Ok(result);
         }
         catch (Exception ex)
         {
@@ -43,10 +45,28 @@ public class FinanceController : ControllerBase
     {
         try
         {
-            var finacne = await _mediator.Send(new GetFinanceQuery(id));
+            var result = await _mediator.Send(new GetFinanceQuery(id));
+            _logger.LogInformation($"Return{id}", result);
+            
+            return Ok(result);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogWarning(ex.Message);
+            return BadRequest(ex.Message);
+        }
+    }
 
-            _logger.LogInformation($"Return{id}", finacne);
-            return Ok(finacne);
+    [HttpPost]
+    public async Task<ActionResult> Post([FromBody] CreateFinanceCommand command)
+    {
+        try
+        {
+            var result = await _mediator.Send(command);
+            _logger.LogInformation($"Finance: {result} has ben created");
+
+
+            return Created($"/api/finances/{result}", result);
         }
         catch (Exception ex)
         {

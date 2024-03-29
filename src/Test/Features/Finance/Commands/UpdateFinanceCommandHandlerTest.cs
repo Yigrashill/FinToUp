@@ -36,7 +36,7 @@ public class UpdateFinanceCommandHandlerTest
             Id = 1,
             Title = "NewTitle",
             Amount = 1.00M,
-            FinanceType = FinanceType.Liabilities,
+            FinanceType = FinanceTypeDTO.Liabilities,
         };
 
         // Act
@@ -64,7 +64,7 @@ public class UpdateFinanceCommandHandlerTest
             Id = 1,
             Title = title,
             Amount = 1.00M,
-            FinanceType = FinanceType.Liabilities,
+            FinanceType = FinanceTypeDTO.Liabilities,
         };
 
         // Act & Assert
