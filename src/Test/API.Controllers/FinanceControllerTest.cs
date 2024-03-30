@@ -18,7 +18,7 @@ public class FinanceControllerTest : IClassFixture<WebApplicationFactory<Program
     {
         _factory = new WebApplicationFactory<Program>().WithWebHostBuilder(builder =>
         {
-            builder.ConfigureTestServices(services => 
+            builder.ConfigureTestServices(services =>
             {
                 services.RemoveAll(typeof(DbContextOptions<FinanceDataBaseContext>));
                 services.AddDbContext<FinanceDataBaseContext>(options =>
@@ -66,7 +66,7 @@ public class FinanceControllerTest : IClassFixture<WebApplicationFactory<Program
     }
 
     [Fact]
-    public async Task  Get_Request_In_FinanceController_Should_Return_List_Of_Finances()
+    public async Task Get_Request_In_FinanceController_Should_Return_List_Of_Finances()
     {
         // Arrange
         var client = _factory.CreateClient();
@@ -108,15 +108,30 @@ public class FinanceControllerTest : IClassFixture<WebApplicationFactory<Program
         var client = _factory.CreateClient();
         var command = new UpdateFinanceCommand
         {
-            Id = 1, 
+            Id = 1,
             Title = "Zaktualizowany Tytuł",
             Amount = 500.00M,
-            FinanceType = FinanceTypeDTO.Assets 
+            FinanceType = FinanceTypeDTO.Assets
         };
 
         // Act
         var response = await client.PutAsJsonAsync("/api/finances/", command);
         var result = await response.Content.ReadAsStringAsync();
+
+        // Assert
+        response.StatusCode.ShouldBe(System.Net.HttpStatusCode.NoContent);
+    }
+
+
+    [Fact]
+    public async Task Deleate_Request_In_FinanceController_Shoululd_Deleted_Finance_And_Return_NoContent()
+    {
+        // Arrange
+        var client = _factory.CreateClient();
+
+        // Act
+        var response = await client.DeleteAsync("/api/finances/1");
+
 
         // Assert
         response.StatusCode.ShouldBe(System.Net.HttpStatusCode.NoContent);
