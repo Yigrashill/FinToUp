@@ -17,6 +17,18 @@ Get {{API_HostAddress}}/api/finances/1
 
 
 ###
+# Create New finance
+POST {{API_HostAddress}}/api/finances
+Content-Type: application/json
+
+{
+  "title": "Nowy Tytuł",
+  "amount": 510.00,
+  "financeType": 1
+}
+
+
+###
 # Update finance
 PUT {{API_HostAddress}}/api/finances
 Content-Type: application/json
@@ -27,3 +39,9 @@ Content-Type: application/json
   "amount": 520.00,
   "financeType": 2
 }
+
+
+
+###
+# Delete finance by id 
+DELETE {{API_HostAddress}}/api/finances/1
