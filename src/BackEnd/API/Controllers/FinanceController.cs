@@ -30,7 +30,7 @@ public class FinanceController : ControllerBase
         {
             var result = await _mediator.Send(new GetFinancesQuery());
             _logger.LogInformation("Return all finances", result);
-            
+
             return Ok(result);
         }
         catch (Exception ex)
@@ -47,7 +47,7 @@ public class FinanceController : ControllerBase
         {
             var result = await _mediator.Send(new GetFinanceQuery(id));
             _logger.LogInformation($"Return{id}", result);
-            
+
             return Ok(result);
         }
         catch (Exception ex)
@@ -58,7 +58,7 @@ public class FinanceController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<ActionResult> Post([FromBody] CreateFinanceCommand command)
+    public async Task<ActionResult> Post(CreateFinanceCommand command)
     {
         try
         {
@@ -92,4 +92,22 @@ public class FinanceController : ControllerBase
             return BadRequest(ex.Message);
         }
     }
+
+    [HttpDelete("{id}")]
+    public async Task<ActionResult<FinanceDTO>> Delete(int id)
+    {
+        try
+        {
+            _ = await _mediator.Send(new DeleteFinanceCommand(id));
+            _logger.LogInformation($"Delete Finance: {id}");
+
+            return NoContent();
+        }
+        catch (Exception ex)
+        {
+            _logger.LogWarning(ex.Message);
+            return BadRequest(ex.Message);
+        }
+    }
+
 }

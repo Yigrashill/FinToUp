@@ -55,6 +55,66 @@ The first sprint is described below.
 I work on a daily basis :) so I don't have much time to write applications.
 However, I've set aside about 30 minutes in the morning before going to work.
 
+
+# Luźny plan na aplikację (przy wigilijnym stole :) 
+
+Sprint 2
+
+    Przeprowadzone testy jednostkowe i integracyjne
+    Implementacja wzorca Mediator
+    Operacje CRUD w Rest API
+
+Sprint 3 (1.04 - 14.04)
+
+    Wprowadzenie Entity Framework
+    Rozszerzenie obsługi błędów
+    Globalna obsługa błędów
+    Użycie middleware
+    Dodanie testów w Postmanie
+
+Sprint 4 (15.04 - 28.04)
+
+    Utworzenie projektu frontendowego w React 18
+    Podstawowy model TypeScript
+    Tworzenie funkcji do wyświetlania obiektów w tabeli
+    Utworzenie prostych testów frontendowych
+
+Sprint 5 (29.04 - 12.05) - Uwaga, Majówka
+
+    Utworzenie połączeń Axios z Rest API
+    Dyskusja na temat potrzeby testowania Axios po stronie frontendu
+    Testy integracyjne
+    Budowanie CI pipeline do budowania i testowania frontendu
+    Stworzenie procesu CD umożliwiającego wdrożenie całości na Azure
+
+Uwaga: Plan pierwszych 5 sprintów dotyczy stworzenia prostej aplikacji CRUD oraz klienta obsługującego ten CRUD. Po realizacji tych sprintów możliwe będzie stworzenie pierwszego release'u aplikacji. W kolejnych etapach projektu przewiduje się wykorzystanie wniosków do zbudowania odpowiedniego modelu DDD. Początkowe fazy zakładają utworzenie prostego CRUD-a i "walking skeleton", który nie stanowi finalnej struktury aplikacji.
+
+Zakładam, że aplikacja jest more for fun niż super Solid API które spełania super zasady biznesowe, ale też chcę mieć coś klikalnego co zrobiłem wstając rano przed pracą :)
+
+Sprint 6 (13.05 - 26.05)
+
+    Model zależny od miesiąca
+    Zmiana w obsłudze obiektów finansowych
+    Wykorzystanie kontekstu użytkownika
+    Modyfikacja repozytoriów
+
+Sprint 7 (27.05 - 09.06) - Wyjazd do Hiszpanii
+
+    Nowe zastosowania middleware
+    Testy jednostkowe
+    Zmiany w kontrolerze finansowym
+    Nowy kontroler miesięczny
+    Kontroler autoryzacji
+    Testy integracyjne
+
+Sprint 8 (10.06 - 24.06) - praca już po konkursie
+
+    Użycie nowego REST API po stronie frontendu
+    Autentykacja i autoryzacja użytkownika
+    Nowy sposób wyświetlania informacji w zależności od użytkownika i finansów w ramach miesiąca
+
+
+
 ### 🔵 Sprint 2  (March 18, 2024 → March 31, 2024)
 
 
@@ -75,9 +135,9 @@ Status | Name
 ✅| TASK-86 Test Create Method in FinanceController
 ✅| TASK-89 Implement Update Method in FinanceController
 ✅| TASK-90 Test Update Method in FinanceController
-☑️| TASK-91 Implement Delete Method in FinanceController
-☑️| TASK-92 Test Delete Method in FinanceController
-⬜| TASK-93 Write Some base documentation, what you alredy build in March
+✅| TASK-91 Implement Delete Method in FinanceController
+✅| TASK-92 Test Delete Method in FinanceController
+☑️| TASK-93 Write Some base documentation, what you alredy build in March
 
 
 ### 🔵 Sprint 1  (March 1, 2024 → March 17, 2024)
@@ -98,15 +158,13 @@ Status | Name
 ✅| Create Repositories.
 ✅| Add .NET build action in GitHub
 ✅| Add Testing Project
-✅| Add testing Action in GitHub
+ Add testing Action in GitHub
 
 
  ### ⚪ Backlog
 
 Status | Name
 :---:| ---
-⬜️| TASK- Develop REST Client tests for the Create new finance.
-⬜️| TASK- Develop REST Client tests for the Update finance.
-⬜️| TASK- Develop REST Client tests for the Delete finance.
+
 ⬜️| TASK- Add Entity Framework Code first Data Base
-☑️| Icon Helper
+☑️| ✅| Icon Helper 
