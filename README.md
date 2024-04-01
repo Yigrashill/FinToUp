@@ -167,7 +167,7 @@ Status | Name
 ✅| Create Repositories.
 ✅| Add .NET build action in GitHub
 ✅| Add Testing Project
- Add testing Action in GitHub
+✅| Add testing Action in GitHub
 
 
  ### ⚪ Backlog
