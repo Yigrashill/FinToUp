@@ -55,64 +55,73 @@ The first sprint is described below.
 I work on a daily basis :) so I don't have much time to write applications.
 However, I've set aside about 30 minutes in the morning before going to work.
 
+# A casual app plan at the Easter table :)
 
-# Luźny plan na aplikację (przy wigilijnym stole :) 
+Sprint 1 (March 1 - March 17)
 
-Sprint 2
+    Creation of the application
+    Division of the application into a simple Onion architecture for CQRS
+    Creation of simple Commands and Queries
+    Integration with Notion
+    Creation of simple unit tests
+    Establishment and utilization of CI processes
 
-    Przeprowadzone testy jednostkowe i integracyjne
-    Implementacja wzorca Mediator
-    Operacje CRUD w Rest API
+Sprint 2 (March 18 - 31 March)
 
-Sprint 3 (1.04 - 14.04)
+    Conducted unit and integration tests
+    Implementation of the Mediator pattern
+    CRUD operations in Rest API
+    Unit test of CQRS
+    Integration Test of REST API
 
-    Wprowadzenie Entity Framework
-    Rozszerzenie obsługi błędów
-    Globalna obsługa błędów
-    Użycie middleware
-    Dodanie testów w Postmanie
+Sprint 3 (April 1 - April 14)
 
-Sprint 4 (15.04 - 28.04)
+    Introduction of Entity Framework
+    Expanded error handling
+    Global error handling
+    Usage of middleware
+    Added tests in Postman
 
-    Utworzenie projektu frontendowego w React 18
-    Podstawowy model TypeScript
-    Tworzenie funkcji do wyświetlania obiektów w tabeli
-    Utworzenie prostych testów frontendowych
+Sprint 4 (April 15 - April 28)
 
-Sprint 5 (29.04 - 12.05) - Uwaga, Majówka
+    Creation of a frontend project in React 18
+    Basic TypeScript model
+    Developing functions to display objects in a table
+    Creation of simple frontend tests
 
-    Utworzenie połączeń Axios z Rest API
-    Dyskusja na temat potrzeby testowania Axios po stronie frontendu
-    Testy integracyjne
-    Budowanie CI pipeline do budowania i testowania frontendu
-    Stworzenie procesu CD umożliwiającego wdrożenie całości na Azure
+Sprint 5 (April 29 - May 12) - Note, May Holiday
 
-Uwaga: Plan pierwszych 5 sprintów dotyczy stworzenia prostej aplikacji CRUD oraz klienta obsługującego ten CRUD. Po realizacji tych sprintów możliwe będzie stworzenie pierwszego release'u aplikacji. W kolejnych etapach projektu przewiduje się wykorzystanie wniosków do zbudowania odpowiedniego modelu DDD. Początkowe fazy zakładają utworzenie prostego CRUD-a i "walking skeleton", który nie stanowi finalnej struktury aplikacji.
+    Creation of Axios connections to Rest API
+    Discussion on the need to test Axios on the frontend side
+    Integration tests
+    Building a CI pipeline for building and testing the frontend
+    Creation of a CD process enabling deployment of the entire application on Azure
 
-Zakładam, że aplikacja jest more for fun niż super Solid API które spełania super zasady biznesowe, ale też chcę mieć coś klikalnego co zrobiłem wstając rano przed pracą :)
+Note: The plan for the first 5 sprints focuses on creating a simple CRUD application and a client to handle this CRUD. After completing these sprints, it will be possible to create the first release of the application. In later stages of the project, it is anticipated that insights will be used to build an appropriate DDD model. The initial phases involve creating a simple CRUD and a "walking skeleton," which does not represent the final structure of the application.
 
-Sprint 6 (13.05 - 26.05)
+I assume that the application is more for fun than a super solid API that meets strict business standards, but I also want to have something clickable that I made by getting up in the morning before work :)
 
-    Model zależny od miesiąca
-    Zmiana w obsłudze obiektów finansowych
-    Wykorzystanie kontekstu użytkownika
-    Modyfikacja repozytoriów
+Sprint 6 (May 13 - May 26)
 
-Sprint 7 (27.05 - 09.06) - Wyjazd do Hiszpanii
+    Month-dependent model
+    Changes in the handling of financial objects
+    Use of user context
+    Repository modifications
 
-    Nowe zastosowania middleware
-    Testy jednostkowe
-    Zmiany w kontrolerze finansowym
-    Nowy kontroler miesięczny
-    Kontroler autoryzacji
-    Testy integracyjne
+Sprint 7 (May 27 - June 9) - Trip to Spain
 
-Sprint 8 (10.06 - 24.06) - praca już po konkursie
+    New uses of middleware
+    Unit tests
+    Changes in the financial controller
+    New monthly controller
+    Authorization controller
+    Integration tests
 
-    Użycie nowego REST API po stronie frontendu
-    Autentykacja i autoryzacja użytkownika
-    Nowy sposób wyświetlania informacji w zależności od użytkownika i finansów w ramach miesiąca
+Sprint 8 (June 10 - June 24) - Work after the contest
 
+    Use of a new REST API on the frontend side
+    User authentication and authorization
+    A new way of displaying information depending on the user and finances within a month
 
 
 ### 🔵 Sprint 2  (March 18, 2024 → March 31, 2024)
@@ -165,6 +174,5 @@ Status | Name
 
 Status | Name
 :---:| ---
-
 ⬜️| TASK- Add Entity Framework Code first Data Base
 ☑️| ✅| Icon Helper 
