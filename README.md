@@ -124,6 +124,20 @@ Sprint 8 (June 10 - June 24) - Work after the contest
     A new way of displaying information depending on the user and finances within a month
 
 
+### 🔵 Sprint 3  (April 1, 2024 → April 14, 2024)
+
+
+Status | Name
+:---:| ---
+☑️| TASK- Create Sprint 3 plan.
+⬜️| TASK- Implement DataBase by Entity Framework (Code first).
+⬜️| TASK- Add Custom Error Class and custom Error Type.
+⬜️| TASK- Global error handling.
+⬜️| TASK- Usage of middleware.
+⬜️| TASK- Added tests in Postman.
+
+
+
 ### 🔵 Sprint 2  (March 18, 2024 → March 31, 2024)
 
 
@@ -146,7 +160,7 @@ Status | Name
 ✅| TASK-90 Test Update Method in FinanceController
 ✅| TASK-91 Implement Delete Method in FinanceController
 ✅| TASK-92 Test Delete Method in FinanceController
-☑️| TASK-93 Write Some base documentation, what you alredy build in March
+✅| TASK-93 Write Some base documentation, what you alredy build in March
 
 
 ### 🔵 Sprint 1  (March 1, 2024 → March 17, 2024)
