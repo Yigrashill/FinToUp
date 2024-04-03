@@ -129,9 +129,9 @@ Sprint 8 (June 10 - June 24) - Work after the contest
 
 Status | Name
 :---:| ---
-☑️| TASK- Create Sprint 3 plan.
-⬜️| TASK- Implement DataBase by Entity Framework (Code first).
-⬜️| TASK- Add Custom Error Class and custom Error Type.
+✅| TASK-93 Create Sprint 3 plan.
+✅| TASK-94  Add DataBase in SQL server
+☑️| TASK- Add Custom Error Class and custom Error Type.
 ⬜️| TASK- Global error handling.
 ⬜️| TASK- Usage of middleware.
 ⬜️| TASK- Added tests in Postman.
