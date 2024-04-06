@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Application.Contracts.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,11 @@ namespace API.Middlewares
 			try
 			{
 				await next.Invoke(context);
+			}
+			catch (NotFoundException nfex)
+			{
+				context.Response.StatusCode = 400;
+				await context.Response.WriteAsync(nfex.Message);
 			}
 			catch (Exception ex)
 			{

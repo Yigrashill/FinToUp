@@ -137,4 +137,24 @@ public class FinanceControllerTest : IClassFixture<WebApplicationFactory<Program
         response.StatusCode.ShouldBe(System.Net.HttpStatusCode.NoContent);
     }
 
+    [Fact]
+    public async Task Deleate_Request_In_FinanceController_Shoululd_ReturnBedRequest()
+    {
+        // Arrange
+        var client = _factory.CreateClient();
+        var finance = await client.GetAsync("/api/finances/");
+        var textResult = await finance.Content.ReadAsStringAsync();
+        var financeReult = await finance.Content.ReadFromJsonAsync<List<FinanceDTO>>() ?? new List<FinanceDTO>();
+        var itemsCout = financeReult.Count;
+
+        // Act
+        var response = await client.DeleteAsync($"/api/finances/{itemsCout + 10}");
+        var result = await response.Content.ReadAsStringAsync();
+
+
+        // Assert
+        response.StatusCode.ShouldBe(System.Net.HttpStatusCode.BadRequest);
+        result.ShouldNotBeNullOrEmpty();
+    }
+
 }

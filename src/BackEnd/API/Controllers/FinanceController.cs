@@ -96,18 +96,9 @@ public class FinanceController : ControllerBase
     [HttpDelete("{id}")]
     public async Task<ActionResult<FinanceDTO>> Delete(int id)
     {
-        try
-        {
-            _ = await _mediator.Send(new DeleteFinanceCommand(id));
-            _logger.LogInformation($"Delete Finance: {id}");
-
-            return NoContent();
-        }
-        catch (Exception ex)
-        {
-            _logger.LogWarning(ex.Message);
-            return BadRequest(ex.Message);
-        }
+        _ = await _mediator.Send(new DeleteFinanceCommand(id));
+        _logger.LogInformation($"Delete Finance: {id}");
+        
+        return NoContent();
     }
-
 }
