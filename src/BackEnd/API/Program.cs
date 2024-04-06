@@ -2,6 +2,7 @@ using Serilog;
 using Persistance;
 using Application;
 using Infrastructure;
+using API.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +10,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddApplicationServices();
 builder.Services.AddPersistanceServices(builder.Configuration);
 builder.Services.AddInfrastructureServices(builder.Configuration);
+
+builder.Services.AddScoped<ErrorHandeling>();
 
 builder.Services.AddControllers();
 builder.Services.AddCors(options =>
@@ -30,6 +33,9 @@ builder.Host.UseSerilog((context, configuration) =>
 });
 
 var app = builder.Build();
+
+app.UseMiddleware<ErrorHandeling>();
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
