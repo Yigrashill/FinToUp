@@ -131,10 +131,14 @@ Status | Name
 :---:| ---
 ✅| TASK-93 Create Sprint 3 plan.
 ✅| TASK-94  Add DataBase in SQL server
-☑️| TASK- Add Custom Error Class and custom Error Type.
-☑️| TASK- Global error handling.
-☑️| TASK- Usage of middleware.
-⬜️| TASK- Added tests in Postman.
+✅| TASK-95 Handling Exception in Middleware
+✅| TASK-96 Global error handling.
+☑️| TASK-97: Global Error Handling in Create Action
+⬜️| TASK-98: Global Error Handling in Get Action
+⬜️| TASK-99: Global Error Handling in Update Action
+⬜️| TASK-100 Custom Error Type. 
+⬜️| TASK-101 Custom Error Class 
+⬜️| TASK-102 Use API in Postman
 
 
 
