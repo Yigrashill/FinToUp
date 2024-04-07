@@ -88,7 +88,7 @@ public class FinanceControllerTest : IClassFixture<WebApplicationFactory<Program
         var client = _factory.CreateClient();
         var command = new CreateFinanceCommand
         {
-            Title = "Nowy Tytuł",
+            Title = "",
             Amount = 510.00M,
             FinanceType = FinanceTypeDTO.Assets
         };
@@ -98,8 +98,29 @@ public class FinanceControllerTest : IClassFixture<WebApplicationFactory<Program
 
 
         // Assert
+        response.StatusCode.ShouldBe(System.Net.HttpStatusCode.BadRequest);
+    }
+
+    [Fact]
+    public async Task Post_Request_In_FinanceController_Shoululd__Shoululd_ReturnBedRequest()
+    {
+        // Arrange
+        var client = _factory.CreateClient();
+        var command = new CreateFinanceCommand
+        {
+            Title = "Nowy Tytuł",
+            Amount = 510.00M,
+            FinanceType = FinanceTypeDTO.Assets
+        };
+
+        // Act
+        var response = await client.PostAsJsonAsync("api/finances/", command);
+
+
+        // Assert
         response.StatusCode.ShouldBe(System.Net.HttpStatusCode.Created);
     }
+
 
     [Fact]
     public async Task Put_Request_In_FinanceController_Should_Update_Finance_And_Return_NoContent()

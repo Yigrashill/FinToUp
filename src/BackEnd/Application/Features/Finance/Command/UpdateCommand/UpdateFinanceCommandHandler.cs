@@ -26,7 +26,7 @@ public class UpdateFinanceCommandHandler : IRequestHandler<UpdateFinanceCommand,
         var validationResult = await validator.ValidateAsync(request, cancellationToken);
         if (validationResult.Errors.Any()) 
         {
-            throw new BadRequestException("Update new finance: ", validationResult);
+            throw new ValidationException("Update new finance: ", validationResult);
         }
 
         var financeToUpdate = _mapper.Map<Domain.Models.Finance>(request);

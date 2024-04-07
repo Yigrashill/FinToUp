@@ -62,7 +62,7 @@ public class CreateFinanceCommandHandlerTest
         };
 
         // Act & Assert
-        await Should.ThrowAsync<BadRequestException>(async () =>
+        await Should.ThrowAsync<ValidationException>(async () =>
         {
             await handler.Handle(newFinance, CancellationToken.None);
         });
@@ -82,7 +82,7 @@ public class CreateFinanceCommandHandlerTest
         };
 
         // Act & Assert
-        await Should.ThrowAsync<BadRequestException>(async () =>
+        await Should.ThrowAsync<ValidationException>(async () =>
         {
             await handler.Handle(newFinance, CancellationToken.None);
         });
