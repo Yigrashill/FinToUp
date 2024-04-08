@@ -26,7 +26,7 @@ public class CreateFinanceCommandHandler : IRequestHandler<CreateFinanceCommand,
         var validationResult = await validator.ValidateAsync(request, cancellationToken);
         if (validationResult.Errors.Any())
         {
-            throw new BadRequestException("Create new finance: ", validationResult);
+            throw new ValidationException("Create new finance: ", validationResult);
         }
 
         // Convert object to entity domain
