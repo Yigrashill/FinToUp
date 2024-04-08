@@ -60,19 +60,10 @@ public class FinanceController : ControllerBase
     [HttpPost]
     public async Task<ActionResult> Post(CreateFinanceCommand command)
     {
-        try
-        {
-            var result = await _mediator.Send(command);
-            _logger.LogInformation($"Finance: {result} has ben created");
-
-
-            return Created($"/api/finances/{result}", result);
-        }
-        catch (Exception ex)
-        {
-            _logger.LogWarning(ex.Message);
-            return BadRequest(ex.Message);
-        }
+        var result = await _mediator.Send(command);
+        _logger.LogInformation($"Finance: {result} has ben created");
+     
+        return Created($"/api/finances/{result}", result);
     }
 
     [HttpPut]

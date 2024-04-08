@@ -1,4 +1,5 @@
 ﻿using Application.Contracts.Exceptions;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,14 +16,19 @@ namespace API.Middlewares
 			{
 				await next.Invoke(context);
 			}
+			catch(ValidationException valex)
+			{
+                context.Response.StatusCode = StatusCodes.Status400BadRequest;
+				await context.Response.WriteAsync(valex.Message);
+			}	
 			catch (NotFoundException nfex)
 			{
-				context.Response.StatusCode = 400;
+				context.Response.StatusCode = StatusCodes.Status400BadRequest;
 				await context.Response.WriteAsync(nfex.Message);
 			}
 			catch (Exception ex)
 			{
-				context.Response.StatusCode = 500;
+				context.Response.StatusCode = StatusCodes.Status500InternalServerError;
 				await context.Response.WriteAsync($"Global Error: {ex.Message}");
 			}
         }

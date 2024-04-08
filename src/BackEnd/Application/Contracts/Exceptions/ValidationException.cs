@@ -2,9 +2,9 @@
 
 namespace Application.Contracts.Exceptions;
 
-public class BadRequestException : Exception
+public class ValidationException : Exception
 {
-    public BadRequestException(string message) 
+    public ValidationException(string message) 
         : base(message) 
     {
         // TODO can return some error status 400 status code.
@@ -12,7 +12,7 @@ public class BadRequestException : Exception
         // Can return some Individual Error Class not only message
     }
 
-    public BadRequestException(string message, ValidationResult validationResult)
+    public ValidationException(string message, ValidationResult validationResult)
         :base(message)
     {
         ValidationErrors = new();

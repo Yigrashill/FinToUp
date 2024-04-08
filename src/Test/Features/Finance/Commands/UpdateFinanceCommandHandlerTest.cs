@@ -68,7 +68,7 @@ public class UpdateFinanceCommandHandlerTest
         };
 
         // Act & Assert
-        await Should.ThrowAsync<BadRequestException>(async () =>
+        await Should.ThrowAsync<ValidationException>(async () =>
         {
             await handler.Handle(newFinanceCommand, CancellationToken.None);
         });
