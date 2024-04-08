@@ -26,35 +26,19 @@ public class FinanceController : ControllerBase
     [HttpGet]
     public async Task<ActionResult<List<FinanceDTO>>> Get()
     {
-        try
-        {
-            var result = await _mediator.Send(new GetFinancesQuery());
-            _logger.LogInformation("Return all finances", result);
-
-            return Ok(result);
-        }
-        catch (Exception ex)
-        {
-            _logger.LogWarning(ex.Message);
-            return BadRequest(ex.Message);
-        }
+        var result = await _mediator.Send(new GetFinancesQuery());
+        _logger.LogInformation("Return all finances", result);
+     
+        return Ok(result);
     }
 
     [HttpGet("{id}")]
     public async Task<ActionResult<FinanceDTO>> Get(int id)
     {
-        try
-        {
-            var result = await _mediator.Send(new GetFinanceQuery(id));
-            _logger.LogInformation($"Return{id}", result);
-
-            return Ok(result);
-        }
-        catch (Exception ex)
-        {
-            _logger.LogWarning(ex.Message);
-            return BadRequest(ex.Message);
-        }
+        var result = await _mediator.Send(new GetFinanceQuery(id));
+        _logger.LogInformation($"Return{id}", result);
+     
+        return Ok(result);
     }
 
     [HttpPost]
