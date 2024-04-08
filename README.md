@@ -133,9 +133,9 @@ Status | Name
 ✅| TASK-94  Add DataBase in SQL server
 ✅| TASK-95 Handling Exception in Middleware
 ✅| TASK-96 Global error handling.
-☑️| TASK-97: Global Error Handling in Create Action
-⬜️| TASK-98: Global Error Handling in Get Action
-⬜️| TASK-99: Global Error Handling in Update Action
+✅| TASK-97: Global Error Handling in Create Action
+✅| TASK-98: Global Error Handling in Get Action
+☑️| TASK-99: Global Error Handling in Update Action
 ⬜️| TASK-100 Custom Error Type. 
 ⬜️| TASK-101 Custom Error Class 
 ⬜️| TASK-102 Use API in Postman
