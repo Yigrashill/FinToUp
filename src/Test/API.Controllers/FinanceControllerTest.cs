@@ -166,6 +166,28 @@ public class FinanceControllerTest : IClassFixture<WebApplicationFactory<Program
         response.StatusCode.ShouldBe(System.Net.HttpStatusCode.NoContent);
     }
 
+    [Fact]
+    public async Task Put_Request_In_FinanceController_Shoululd__Shoululd_ReturnBedRequest()
+    {
+        // Arrange
+        var client = _factory.CreateClient();
+        var command = new UpdateFinanceCommand
+        {
+            Id = 1,
+            Title = "",
+            Amount = 500.00M,
+            FinanceType = FinanceTypeDTO.Assets
+        };
+
+        // Act
+        var response = await client.PutAsJsonAsync("/api/finances/", command);
+        var result = await response.Content.ReadAsStringAsync();
+
+        // Assert
+        response.StatusCode.ShouldBe(System.Net.HttpStatusCode.BadRequest);
+        result.ShouldNotBeNullOrEmpty();
+    }
+
 
     [Fact]
     public async Task Deleate_Request_In_FinanceController_Shoululd_Deleted_Finance_And_Return_NoContent()
