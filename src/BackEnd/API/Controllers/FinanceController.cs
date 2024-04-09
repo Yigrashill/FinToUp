@@ -53,19 +53,10 @@ public class FinanceController : ControllerBase
     [HttpPut]
     public async Task<ActionResult> Put(UpdateFinanceCommand command)
     {
-        try
-        {
-            _ = await _mediator.Send(command);
-            _logger.LogInformation($"Finance: {command.Id} wos updated");
-
-            return NoContent();
-
-        }
-        catch (Exception ex)
-        {
-            _logger.LogWarning(ex.Message);
-            return BadRequest(ex.Message);
-        }
+        _ = await _mediator.Send(command);
+        _logger.LogInformation($"Finance: {command.Id} wos updated");
+        
+        return NoContent();
     }
 
     [HttpDelete("{id}")]
