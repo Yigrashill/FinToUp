@@ -12,7 +12,7 @@ Get {{API_HostAddress}}/api/finances
 
 ###
 # Get finance by id 
-Get {{API_HostAddress}}/api/finances/1
+Get {{API_HostAddress}}/api/finances/12
 
 
 
