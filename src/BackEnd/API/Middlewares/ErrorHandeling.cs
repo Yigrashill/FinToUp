@@ -23,7 +23,7 @@ namespace API.Middlewares
 			}	
 			catch (NotFoundException nfex)
 			{
-				context.Response.StatusCode = StatusCodes.Status400BadRequest;
+				context.Response.StatusCode = StatusCodes.Status404NotFound;
 				await context.Response.WriteAsync(nfex.Message);
 			}
 			catch (Exception ex)

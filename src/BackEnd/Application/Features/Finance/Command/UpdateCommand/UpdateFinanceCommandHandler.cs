@@ -21,6 +21,13 @@ public class UpdateFinanceCommandHandler : IRequestHandler<UpdateFinanceCommand,
         // TODO make validator like common service
         // TODO crerate validate service and inject in contructor
 
+        // Find or not found
+        var existingFinance = await _financeRepository.GetByIdAsync(request.Id);
+        if (existingFinance is null)
+        {
+            throw new NotFoundException(nameof(Finance), request.Id);
+        }
+
         // Validate data
         var validator = new UpdateFinanceCommandValidator();
         var validationResult = await validator.ValidateAsync(request, cancellationToken);
