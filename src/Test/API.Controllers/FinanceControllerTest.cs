@@ -82,22 +82,18 @@ public class FinanceControllerTest : IClassFixture<WebApplicationFactory<Program
     }
 
     [Fact]
-    public async Task Get_By_Id_Request_In_FinanceControllerr_Should_Return_BedRequest()
+    public async Task Get_By_Id_Request_In_FinanceControllerr_Should_Return_NotFound()
     {
         // Arrange
         var client = _factory.CreateClient();
-        var finance = await client.GetAsync("/api/finances/");
-        var textResult = await finance.Content.ReadAsStringAsync();
-        var financeReult = await finance.Content.ReadFromJsonAsync<List<FinanceDTO>>() ?? new List<FinanceDTO>();
-        var itemsCout = financeReult.Count;
 
         // Act
-        var response = await client.GetAsync($"/api/finances/{itemsCout + 10}");
+        var response = await client.GetAsync($"/api/finances/{0}");
         var result = await response.Content.ReadAsStringAsync();
 
 
         // Assert
-        response.StatusCode.ShouldBe(System.Net.HttpStatusCode.BadRequest);
+        response.StatusCode.ShouldBe(System.Net.HttpStatusCode.NotFound);
         result.ShouldNotBeNullOrEmpty();
     }
 
@@ -123,7 +119,7 @@ public class FinanceControllerTest : IClassFixture<WebApplicationFactory<Program
     }
 
     [Fact]
-    public async Task Post_Request_In_FinanceController_Shoululd__Shoululd_ReturnBedRequest()
+    public async Task Post_Request_In_FinanceController_Shoululd_Shoululd_ReturnBedRequest()
     {
         // Arrange
         var client = _factory.CreateClient();
@@ -188,6 +184,28 @@ public class FinanceControllerTest : IClassFixture<WebApplicationFactory<Program
         result.ShouldNotBeNullOrEmpty();
     }
 
+    [Fact]
+    public async Task Put_Request_In_FinanceController_Should_Return_NotFound()
+    {
+        // Arrange
+        var client = _factory.CreateClient();
+        var command = new UpdateFinanceCommand
+        {
+            Id = 0,
+            Title = "New Title",
+            Amount = 500.00M,
+            FinanceType = FinanceTypeDTO.Assets
+        };
+
+        // Act
+        var response = await client.PutAsJsonAsync("/api/finances/", command);
+        var result = await response.Content.ReadAsStringAsync();
+
+        // Assert
+        response.StatusCode.ShouldBe(System.Net.HttpStatusCode.NotFound);
+        result.ShouldNotBeNullOrEmpty();
+    }
+
 
     [Fact]
     public async Task Deleate_Request_In_FinanceController_Shoululd_Deleted_Finance_And_Return_NoContent()
@@ -196,7 +214,7 @@ public class FinanceControllerTest : IClassFixture<WebApplicationFactory<Program
         var client = _factory.CreateClient();
 
         // Act
-        var response = await client.DeleteAsync("/api/finances/1");
+        var response = await client.DeleteAsync("/api/finances/2");
 
 
         // Assert
@@ -204,22 +222,18 @@ public class FinanceControllerTest : IClassFixture<WebApplicationFactory<Program
     }
 
     [Fact]
-    public async Task Deleate_Request_In_FinanceController_Shoululd_ReturnBedRequest()
+    public async Task Deleate_Request_In_FinanceController_Shoululd_NotFound()
     {
         // Arrange
         var client = _factory.CreateClient();
-        var finance = await client.GetAsync("/api/finances/");
-        var textResult = await finance.Content.ReadAsStringAsync();
-        var financeReult = await finance.Content.ReadFromJsonAsync<List<FinanceDTO>>() ?? new List<FinanceDTO>();
-        var itemsCout = financeReult.Count;
-
+   
         // Act
-        var response = await client.DeleteAsync($"/api/finances/{itemsCout + 10}");
+        var response = await client.DeleteAsync($"/api/finances/{0}");
         var result = await response.Content.ReadAsStringAsync();
 
 
         // Assert
-        response.StatusCode.ShouldBe(System.Net.HttpStatusCode.BadRequest);
+        response.StatusCode.ShouldBe(System.Net.HttpStatusCode.NotFound);
         result.ShouldNotBeNullOrEmpty();
     }
 
