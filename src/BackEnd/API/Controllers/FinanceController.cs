@@ -26,6 +26,7 @@ public class FinanceController : ControllerBase
     [HttpGet]
     public async Task<ActionResult<List<FinanceDTO>>> Get()
     {
+        _logger.LogInformation($"Send as mediator new GetFinancesQuery()");
         var result = await _mediator.Send(new GetFinancesQuery());
         _logger.LogInformation("Return all finances", result);
      
@@ -35,6 +36,7 @@ public class FinanceController : ControllerBase
     [HttpGet("{id}")]
     public async Task<ActionResult<FinanceDTO>> Get(int id)
     {
+        _logger.LogInformation($"Send as mediator new GetFinanceQuery(1)");
         var result = await _mediator.Send(new GetFinanceQuery(id));
         _logger.LogInformation($"Return{id}", result);
      
