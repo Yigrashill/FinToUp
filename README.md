@@ -135,12 +135,11 @@ Status | Name
 ✅| TASK-96 Global error handling.
 ✅| TASK-97: Global Error Handling in Create Action
 ✅| TASK-98: Global Error Handling in Get Action
-☑️| TASK-99: Global Error Handling in Update Action
-Add doker image
-⬜️| TASK-100 Custom Error Type. 
-⬜️| TASK-101 Custom Error Class 
-⬜️| TASK-102 Use API in Postman
-
+✅| TASK-99: Global Error Handling in Update Action
+✅| TASK-100 Custom Error Type 
+✅| TASK-101 Custom Error Class 
+☑️| TASK-102 Use API in Postman
+☑️| TASK-103 Use Docker Image
 
 
 ### 🔵 Sprint 2  (March 18, 2024 → March 31, 2024)
