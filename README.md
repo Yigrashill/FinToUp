@@ -138,12 +138,11 @@ Status | Name
 ✅| TASK-99: Global Error Handling in Update Action
 ✅| TASK-100 Custom Error Type 
 ✅| TASK-101 Custom Error Class 
-☑️| TASK-102 Use API in Postman
-☑️| TASK-103 Use Docker Image
-
+✅| TASK-102 Use API in Postman
+✅| TASK-103 Use Docker Image
+☑️| TASK-104 Lern To Run Docker Image i GitHub Actions.
 
 ### 🔵 Sprint 2  (March 18, 2024 → March 31, 2024)
-
 
 Status | Name
 :---:| ---
