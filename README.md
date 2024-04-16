@@ -123,6 +123,24 @@ Sprint 8 (June 10 - June 24) - Work after the contest
     User authentication and authorization
     A new way of displaying information depending on the user and finances within a month
 
+### 🔵 Sprint 4  (April 15, 2024 → April 28, 2024)
+
+
+Status | Name
+:---:| ---
+☑️| TASK-105 Create Sprint 4 plan.
+☑️| TASK-106 Create Clean React App.
+⬜️| TASK-107 Update gitignore.
+⬜️| TASK-108 Lern About Reack 18.
+⬜️| TASK-109 Create base Finance Interface.
+⬜️| TASK-110 Render Base Finance Component
+⬜️| TASK-111 Create Base Finance List Component
+⬜️| TASK-112 Lern Tailwind CSS 
+⬜️| TASK-113 Use Tailwind CSS 
+
+
+
+
 
 ### 🔵 Sprint 3  (April 1, 2024 → April 14, 2024)
 
@@ -130,7 +148,7 @@ Sprint 8 (June 10 - June 24) - Work after the contest
 Status | Name
 :---:| ---
 ✅| TASK-93 Create Sprint 3 plan.
-✅| TASK-94  Add DataBase in SQL server
+✅| TASK-94 Add DataBase in SQL server
 ✅| TASK-95 Handling Exception in Middleware
 ✅| TASK-96 Global error handling.
 ✅| TASK-97: Global Error Handling in Create Action
