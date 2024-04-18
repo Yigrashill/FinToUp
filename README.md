@@ -130,7 +130,7 @@ Status | Name
 :---:| ---
 ☑️| TASK-105 Create Sprint 4 plan.
 ☑️| TASK-106 Create Clean React App.
-⬜️| TASK-107 Update gitignore.
+☑️| TASK-107 Update gitignore.
 ⬜️| TASK-108 Lern About Reack 18.
 ⬜️| TASK-109 Create base Finance Interface.
 ⬜️| TASK-110 Render Base Finance Component
