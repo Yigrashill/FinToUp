@@ -128,10 +128,10 @@ Sprint 8 (June 10 - June 24) - Work after the contest
 
 Status | Name
 :---:| ---
-☑️| TASK-105 Create Sprint 4 plan.
-☑️| TASK-106 Create Clean React App.
-☑️| TASK-107 Update gitignore.
-⬜️| TASK-108 Lern About Reack 18.
+✅| TASK-105 Create Sprint 4 plan.
+✅| TASK-106 Create Clean React App.
+✅| TASK-107 Update gitignore.
+☑️| TASK-108 Lern About Reack 18.
 ⬜️| TASK-109 Create base Finance Interface.
 ⬜️| TASK-110 Render Base Finance Component
 ⬜️| TASK-111 Create Base Finance List Component
