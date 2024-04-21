@@ -628,3 +628,6 @@ storybook-static/
 # Temporary folders
 tmp/
 temp/
+
+# Ignore package-lock.json file
+package-lock.json
