@@ -15,12 +15,12 @@ const HomeCards = () => {
               Browse Jobs
             </a>
           </Card>
-          <Card bg='bg-indigo-100'>
+          <Card bg='bg-indigo-200'>
             <h2 className='text-2xl font-bold'>For Employers</h2>
               <p className='mt-2 mb-4'>
                 List your job to find the perfect developer for the role
               </p>
-              <h1 className='text-3xl'>New thinks you might do</h1>
+              <h1 className='text-3xl mb-4'>New thinks you might do</h1>
             <a href='/add-job'
               className='inline-block bg-indigo-500 text-white rounded-lg px-4 py-2 hover:bg-indigo-600'>
               Add Job
@@ -30,7 +30,7 @@ const HomeCards = () => {
         </div>
         
     </div>            
-</section>
+  </section>
 
   );
 };
