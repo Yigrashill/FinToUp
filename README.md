@@ -135,8 +135,8 @@ Status | Name
 ⬜️| TASK-109 Create base Finance Interface.
 ⬜️| TASK-110 Render Base Finance Component
 ⬜️| TASK-111 Create Base Finance List Component
-⬜️| TASK-112 Lern Tailwind CSS 
-⬜️| TASK-113 Use Tailwind CSS 
+☑️| TASK-112 Lern Tailwind CSS 
+☑️| TASK-113 Use Tailwind CSS 
 
 
 
