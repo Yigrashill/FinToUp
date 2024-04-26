@@ -22,7 +22,7 @@ const HomeCards = () => {
               </p>
               <h1 className='text-3xl mb-4'>New thinks you might do</h1>
             <a href='/add-job'
-              className='inline-block bg-indigo-500 text-white rounded-lg px-4 py-2 hover:bg-indigo-600'>
+              className='inline-block bg-green-600 text-white rounded-lg px-4 py-2 hover:bg-green-900'>
               Add Job
             </a>
           </Card>
