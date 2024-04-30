@@ -7,9 +7,10 @@ import ViewAllJobs from '../Components/Jobs/ViewAllJobs'
 const HomePage = () => {
   return (
     <>
-        <Hero />
         <HomeCards />
-        <JobList />
+        <section className="bg-blue-800 px-4 py-10">
+          <JobList isHome={true} />
+        </section>
         <ViewAllJobs />
     </>
   )

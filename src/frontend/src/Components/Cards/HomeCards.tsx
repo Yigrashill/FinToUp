@@ -5,7 +5,7 @@ const HomeCards = () => {
   return (
     <section className='py-4'>
     <div className='container-xl lg:container m-auto'>
-        <div className='grid grid-col-1 md:grid-cols-2 gap-4 p-4 rounded0lg'>
+        <div className='grid grid-col-1 md:grid-cols-2 gap-4 p-4 rounded-lg'>
           <Card>
             <h2 className='text-2xl font-bold'> For Developers</h2>
             <p className='mt-2 mb-4'>
