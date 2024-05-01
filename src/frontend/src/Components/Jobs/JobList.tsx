@@ -3,24 +3,26 @@ import JobItem from './JobItem';
 import {Job} from '../../Types/Job'
 import {JobListProps} from '../../Types/Props/JobListProps';
 import Spinner from '../../Components/Spinner';
+import { jobService } from '../../Services/jobService';
 
 const JobList: React.FC<JobListProps> = ({isHome}) => {
 
-    const [jobs, setJobs] = useState([]);
+    const [jobs, setJobs] = useState<Job[]>([]);
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         const fetchJobs = async () => {
+            setLoading(true);
+
             try {
-                const res = await fetch('http://localhost:8000/jobs');
-                const data = await res.json();
+                const data = await jobService.getJobs();
                 setJobs(data);  
             }
             catch(error) {
-                console.log('Error fetching data', error);
+                console.log('Error fetching jobs', error);
             }
             finally {
-                setLoading(true);
+                setLoading(false);
             }
         }
 
