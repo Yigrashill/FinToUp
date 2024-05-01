@@ -1,19 +1,20 @@
+import { Link } from 'react-router-dom';
 import Card from './Card'
 
 const HomeCards = () => {
   return (
     <section className='py-4'>
     <div className='container-xl lg:container m-auto'>
-        <div className='grid grid-col-1 md:grid-col-2 gap-4 p-4 rounded0lg'>
+        <div className='grid grid-col-1 md:grid-cols-2 gap-4 p-4 rounded-lg'>
           <Card>
             <h2 className='text-2xl font-bold'> For Developers</h2>
             <p className='mt-2 mb-4'>
               Browse our React jobs and start your career today
             </p>
-            <a href="/jobs.html"
+            <Link to="/jobs"
               className='inline-block bg-black text-white rounded-lg px-4 py-2 hover:bg-gray-700'>
               Browse Jobs
-            </a>
+            </Link>
           </Card>
           <Card bg='bg-indigo-200'>
             <h2 className='text-2xl font-bold'>For Employers</h2>
@@ -21,10 +22,10 @@ const HomeCards = () => {
                 List your job to find the perfect developer for the role
               </p>
               <h1 className='text-3xl mb-4'>New thinks you might do</h1>
-            <a href='/add-job'
-              className='inline-block bg-indigo-500 text-white rounded-lg px-4 py-2 hover:bg-indigo-600'>
+            <Link to='/add-job'
+              className='inline-block bg-green-600 text-white rounded-lg px-4 py-2 hover:bg-green-900'>
               Add Job
-            </a>
+            </Link>
           </Card>
 
         </div>
