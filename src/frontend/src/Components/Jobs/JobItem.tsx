@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import {Job} from '../../Types/Job'
 import { FaMapMarked, FaMarker } from 'react-icons/fa'
 import { JobItemProps } from '../../Types/Props/JobItemProps';
 
