@@ -15,7 +15,8 @@ const JobList: React.FC<JobListProps> = ({isHome}) => {
             setLoading(true);
 
             try {
-                const data = await jobService.getJobs();
+                let num : number = isHome ? 3 : 1_000_000;
+                const data = await jobService.getJobs(num);
                 setJobs(data);  
             }
             catch(error) {
@@ -29,7 +30,6 @@ const JobList: React.FC<JobListProps> = ({isHome}) => {
         fetchJobs();
     }, []);
 
-   const recentJobs = isHome  ? jobs.slice(0, 3) : jobs;
         
    return (
         <>
@@ -49,7 +49,7 @@ const JobList: React.FC<JobListProps> = ({isHome}) => {
                     </h2>
                     <div className='grid grid-col-1 md:grid-cols-3 gap-6'>
                     {
-                        recentJobs.map((job: Job) => (
+                        jobs.map((job: Job) => (
                             <JobItem key={job.id} job={job} />
                         ))
                     } 
