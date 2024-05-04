@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { FaMapMarked, FaMarker } from 'react-icons/fa'
 import { JobItemProps } from '../../Types/Props/JobItemProps';
+import { Link } from 'react-router-dom';
 
 
 
@@ -36,14 +37,14 @@ const JobItem: React.FC<JobItemProps> = ({ job }) => {
       <div className="border border-gray-100 mb-5"></div>
       <div className="flex flex-col lg:flex-row justify-between mb-4">
         <div className="text-orange-800 mb-3">
-          <FaMapMarked className='inline text-lg mb-1 mr-2' />
+          <FaMapMarked className='inline text-xl mb-1 mr-2' />
             {job.location}
         </div>
-        <a
-          href={`/job/${job.id}`}
+        <Link
+          to={`/jobs/${job.id}`}
           className="h-[36px] bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-lg text-center text-sm">
           Read More
-        </a>
+        </Link>
       </div>
     </div>
   </div>
