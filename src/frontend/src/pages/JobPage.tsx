@@ -2,19 +2,19 @@ import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom';
 import { Job } from '../Types/Job';
 import { FaExclamationTriangle, FaMapMarked } from 'react-icons/fa';
+import { jobService } from '../Services/jobService';
 
 
 
 const JobPage = () => {
-    const { id } = useParams();
+    const { id } = useParams<{ id: number | any }>();
+    // const { id : number  } = useParams();
     const [job, setJob] = useState<Job>();
 
     useEffect(() => {
         const fetchJob = async () => {
             try {
-                const rest = await fetch(`http://localhost:8000/jobs/${id}`);
-                const data = await rest.json();
-
+                const data = await jobService.getJob(id);
                 setJob(data);
             }
             catch(error) {
