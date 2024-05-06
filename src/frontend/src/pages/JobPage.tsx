@@ -45,12 +45,13 @@ const JobPage = () => {
 
   return (
 
-
-    <section className='bg-indigo-700'>
+    <>
     {job 
         ? ( 
+           
+            <section className='bg-indigo-700'>
             <div className='container m-auto py-10 px-6'>
-                <div className='grid grid-cols-1 md:grid-cols-70/20 w-full gap-6'>
+                <div className='grid grid-cols-1 md:grid-cols-70/30 w-full gap-6'>
                     <main>
                         <div className='bg-white p-6 rounded-lg shadow-md text-center md:text-left'>
                             <div className='text-gret-500 mb-4'>
@@ -115,41 +116,53 @@ const JobPage = () => {
                         <h3 className="text-xl font-bold mb-6">
                             Manage Job
                         </h3>
+                        <div className='text-white text-center'>
                         <Link
                             to= {`/edit-job/${job.id}`}
-                            className="bg-indigo-500 hover:bg-indigo-600 text-white text-center font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block">
+                            className="bg-indigo-500 hover:bg-indigo-600   font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block">
                             Edit Job
                         </Link>
                         <button
                             onClick={() => onDeleteClick(job.id)} 
-                            className="bg-red-500 hover-bg-red-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block">
+                            className='bg-red-500 hover:bg-red-600  font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block'>
                             Delete Job
                         </button>
+                        <Link
+                            to='/jobs'
+                            className='bg-orange-500 hover:bg-orange-600 font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block'>
+                            Go Back
+                        </Link>
+                        </div>
+                    
                     </div>
 
                 </aside>
 
                 </div>
             </div>
+    </section>
 
     ) 
     : ( 
-        <div className='text-blue-800 font-bold text-6xl mt-20' >        
-            <FaExclamationTriangle className='inline text-yellow-500 mb-1 mr-2'  />
-            This job dont exist
+
+        <section className='text-center font-bold flex flex-col justify-center items-center h-96'>
+        <div className="text-6xl ">
+          <FaExclamationTriangle className='inline text-yellow-500 mr-4'  />
+              404 Not Found
         </div>
+     
+  
+          <p className='text-xl mb-5'>This job does not exist</p>
+              <Link
+                  to='/'
+                  className='text-white bg-orange-500 hover:bg-orange-600 rounded-md px-3 py-2 mt-4'>
+                  Go Back
+              </Link>
+      </section>
      )}
-     <div className='text-center justify-center mt-20 h-96'>
-        <div className='mt-20 text-2xl'>
-            <Link
-                to='/jobs'
-                className='text-white bg-orange-500 hover:bg-blue-900 rounded-md pl-6 pr-6 p-4'>
-                Go Back
-            </Link>
-        </div>
-            
-        </div>
-    </section>
+   
+   </>
+
      
   );
 };
