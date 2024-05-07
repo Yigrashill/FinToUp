@@ -4,14 +4,16 @@ import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } 
 import JobsPage from './pages/JobsPage';
 import NotFoundPage from './pages/NotFoundPage';
 import JobPage from './pages/JobPage';
+import AddJobPage from './pages/AddJobPage';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
   <Route path='/' element={<MainLayout />} >
     <Route index element={ <HomePage />} /> 
-    <Route path='/Home'  element={ <HomePage />} /> 
-    <Route path='/Jobs' index element={ <JobsPage /> } />
-    <Route path='/Jobs/:id' index element={ <JobPage /> } />
+    <Route path='/home'  element={ <HomePage />} /> 
+    <Route path='/jobs' index element={ <JobsPage /> } />
+    <Route path='/add-job' index element={ <AddJobPage /> } />
+    <Route path='/jobs/:id' index element={ <JobPage /> } />
 
     <Route path='*' index element={ <NotFoundPage /> } />
   </Route>)

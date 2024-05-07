@@ -16,6 +16,7 @@ class JobService {
 
     public async getJob(num : number) : Promise<Job>{
         try {
+            console.log(num);
             const response = await axios.get<Job>(this.baseUrl + `/${num}`);
             return response.data;
         }
@@ -23,6 +24,22 @@ class JobService {
             throw new Error('Error fetching job');
         }
     }
+
+    public addJob = async (newJob : Job ) => {
+
+        try {
+            const request = await axios.post<Job>(this.baseUrl, newJob, {
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            });
+            return request.data;
+        }
+        catch(error) {
+            throw new Error('Error adding job');
+        }
+
+      };
 }
 
 export const jobService = new JobService();

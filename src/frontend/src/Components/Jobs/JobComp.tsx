@@ -7,12 +7,13 @@ import { FaExclamationTriangle, FaMapMarked } from 'react-icons/fa';
 const JobComp = () => {
 
   const navigate = useNavigate();
-  const { id } = useParams<{ id: number | any }>();
+  const { id } = useParams<{ id : number | any }>();
   const [job, setJob] = useState<Job>();
 
   useEffect(() => {
       const fetchJob = async () => {
           try {
+            console.log(id);
               const data = await jobService.getJob(id);
               setJob(data);
           }
