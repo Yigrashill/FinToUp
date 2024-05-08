@@ -3,6 +3,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import { Job } from '../../Types/Job';
 import { jobService } from '../../Services/jobService';
 import { FaExclamationTriangle, FaMapMarked } from 'react-icons/fa';
+import { toast } from 'react-toastify';
 
 const JobComp = () => {
 
@@ -33,9 +34,8 @@ const JobComp = () => {
       if (!confirm ) return;
 
       await jobService.deleteJob(jobId);
-
-      // delete(jobId);
-      // toast.success('Job deleted successfull');
+      
+      toast.error('Job deleted successfull');
 
       navigate('/jobs');
   }
