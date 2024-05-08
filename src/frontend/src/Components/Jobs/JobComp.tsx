@@ -25,15 +25,14 @@ const JobComp = () => {
       fetchJob();
   }, []);
 
-  const onDeleteClick = (jobId : number) =>{
+  const onDeleteClick = async (jobId : number) =>{
       const confirm = window.confirm(
           'Are you sure, you want to delete this job ?'
       );
 
-
       if (!confirm ) return;
 
-      console.log(jobId);
+      await jobService.deleteJob(jobId);
 
       // delete(jobId);
       // toast.success('Job deleted successfull');

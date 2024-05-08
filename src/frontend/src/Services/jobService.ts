@@ -12,7 +12,7 @@ class JobService {
         } catch (error) {
             throw new Error('Error fetching jobs');
         }
-    }
+    };
 
     public async getJob(num : number) : Promise<Job>{
         try {
@@ -23,7 +23,7 @@ class JobService {
         catch (error) {
             throw new Error('Error fetching job');
         }
-    }
+    };
 
     public addJob = async (newJob : Job ) => {
 
@@ -38,7 +38,15 @@ class JobService {
         catch(error) {
             throw new Error('Error adding job');
         }
+      };
 
+      public deleteJob = async (jobId : number) => {
+        try{
+            await axios.delete(this.baseUrl + `/${jobId}`);
+        }
+        catch {
+            throw new Error('Error deleteing job');
+        }
       };
 }
 
