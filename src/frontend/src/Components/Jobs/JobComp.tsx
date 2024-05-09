@@ -6,7 +6,6 @@ import { FaExclamationTriangle, FaMapMarked } from 'react-icons/fa';
 import { toast } from 'react-toastify';
 
 const JobComp = () => {
-
   const navigate = useNavigate();
   const { id } = useParams<{ id : number | any }>();
   const [job, setJob] = useState<Job>();
@@ -22,7 +21,6 @@ const JobComp = () => {
               console.log('Error: ', error);
           }
       }
-
       fetchJob();
   }, []);
 
@@ -45,8 +43,7 @@ const JobComp = () => {
 
     {job 
         ? ( 
-           
-            <section className='bg-indigo-700 min-h-[960px]'>
+        <section className='bg-indigo-700 min-h-[960px]'>
             <div className='container m-auto py-10 px-6'>
                 <div className='grid grid-cols-1 md:grid-cols-70/30 w-full gap-6'>
                     <main>
@@ -78,8 +75,7 @@ const JobComp = () => {
                                 </p>
                         </div>
                     </main>
-
-
+                
                 <aside>
                     <div className="bg-white p-6 rounded-lg shadow md">
                         <h3 className="text-xl font-bold mb-6">
@@ -108,55 +104,50 @@ const JobComp = () => {
                         </p>
                     </div>
 
-
                     <div className="bg-white p-6 rounded-lg shadow-md mt-6">
                         <h3 className="text-xl font-bold mb-6">
                             Manage Job
                         </h3>
                         <div className='text-white text-center'>
-                        <Link
-                            to= {`/edit-job/${job.id}`}
-                            className="bg-indigo-500 hover:bg-indigo-600 font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block">
-                            Edit Job
-                        </Link>
-                        <button
-                            onClick={() => onDeleteClick(job.id)} 
-                            className='bg-red-500 hover:bg-red-600  font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block'>
-                            Delete Job
-                        </button>
-                        <Link
-                            to='/jobs'
-                            className='bg-orange-500 hover:bg-orange-600 font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block'>
-                            Go Back
-                        </Link>
+                            <Link
+                                to= {`/edit-job/${job.id}`}
+                                className="bg-indigo-500 hover:bg-indigo-600 font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block">
+                                Edit Job
+                            </Link>
+                            <button
+                                onClick={() => onDeleteClick(job.id)} 
+                                className='bg-red-500 hover:bg-red-600  font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block'>
+                                Delete Job
+                            </button>
+                            <Link
+                                to='/jobs'
+                                className='bg-orange-500 hover:bg-orange-600 font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block'>
+                                Go Back
+                            </Link>
                         </div>
-                    
                     </div>
-
                 </aside>
-
                 </div>
             </div>
-    </section>
+        </section>
 
-    ) 
-    : ( 
+    ) : ( 
 
         <section className='text-center font-bold flex flex-col justify-center items-center h-96'>
-        <div className="text-6xl ">
-          <FaExclamationTriangle className='inline text-yellow-500 mr-4'  />
-              404 Not Found
-        </div>
-     
-  
-          <p className='text-xl mb-5'>This job does not exist</p>
-              <Link
-                  to='/'
-                  className='text-white bg-orange-500 hover:bg-orange-600 rounded-md px-3 py-2 mt-4'>
-                  Go Back
-              </Link>
-      </section>
-     )}
+            <div className="text-6xl ">
+            <FaExclamationTriangle className='inline text-yellow-500 mr-4'  />
+                404 Not Found
+            </div>
+        
+    
+            <p className='text-xl mb-5'>This job does not exist</p>
+                <Link
+                    to='/'
+                    className='text-white bg-orange-500 hover:bg-orange-600 rounded-md px-3 py-2 mt-4'>
+                    Go Back
+                </Link>
+        </section>
+    )}
    
    </>
   )

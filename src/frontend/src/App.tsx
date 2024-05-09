@@ -5,6 +5,7 @@ import JobsPage from './pages/JobsPage';
 import NotFoundPage from './pages/NotFoundPage';
 import JobPage from './pages/JobPage';
 import AddJobPage from './pages/AddJobPage';
+import EditJobPage from './pages/EditJobPage';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -14,7 +15,7 @@ const router = createBrowserRouter(
     <Route path='/jobs' index element={ <JobsPage /> } />
     <Route path='/add-job' index element={ <AddJobPage /> } />
     <Route path='/jobs/:id' index element={ <JobPage /> } />
-
+    <Route path='/edit-job/:id' index element={ <EditJobPage />} />
     <Route path='*' index element={ <NotFoundPage /> } />
   </Route>)
 );

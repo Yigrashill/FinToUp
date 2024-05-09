@@ -1,4 +1,3 @@
-
 import axios from 'axios';
 import { Job } from '../Types/Job';
 
