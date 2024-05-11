@@ -13,6 +13,7 @@ const AddJobComp = () => {
     const [id, setId] = useState(1000);
     const [description, setDescription] = useState("");
     const [salary, setSalary] = useState('Under $50K');
+    const [location, setLocation] = useState("");
 
     const submitForm = (e : any) => {
         e.preventDefault();
@@ -22,7 +23,7 @@ const AddJobComp = () => {
             type,
             id: 0,
             description,
-            location: '',
+            location,
             salary,
             company: {
                 name : '',
@@ -95,6 +96,7 @@ const AddJobComp = () => {
                             />
                     </div>
 
+                    {/* Description */}
                     <div className="mb-4">
                         <label 
                             htmlFor="description"
@@ -111,7 +113,7 @@ const AddJobComp = () => {
                             onChange={(e) => setDescription(e.target.value)}
                             />
                     </div>
-
+                    .block
                     <div className='mb-4'>
               <label
                 htmlFor='type'
@@ -141,6 +143,23 @@ const AddJobComp = () => {
               </select>
             </div>
 
+            {/* Location */}
+            <div className="mb-4">
+                        <label htmlFor='location'
+                            className="block text-blue-700 font-bold mb-2">
+                            Job location
+                        </label>
+                        <input 
+                            type="text"
+                            id='location'
+                            name='location'
+                            className="border rounded font-bold w-full py-2 px-3 mb-2"
+                            placeholder='Job location'
+                            required
+                            value={location}
+                            onChange={(e) => setTitle(e.target.value)}
+                            />
+                    </div>
 
                     <div>
               <button
