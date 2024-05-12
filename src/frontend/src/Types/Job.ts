@@ -1,7 +1,7 @@
 import { Company } from "./Company";
 
 export  interface Job {
-    id : number;
+    id : number,
     type : string;
     title : string;
     description : string;
