@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import { Job } from '../../Types/Job';
 import { Company } from '../../Types/Company';
 import { jobService } from '../../Services/jobService';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const AddJobComp = () => {
   const navigate = useNavigate();
@@ -14,6 +15,11 @@ const AddJobComp = () => {
     const [description, setDescription] = useState("");
     const [salary, setSalary] = useState('Under $50K');
     const [location, setLocation] = useState("");
+    const [companyName, setCompanyName] = useState("");
+    const [companyDescription, setCompanyDescription] = useState("");
+    const [contactEmail, setContactEmail] = useState("");
+    const [contactPhone, setContactPhone] = useState("");
+
 
     const submitForm = (e : any) => {
         e.preventDefault();
@@ -26,29 +32,20 @@ const AddJobComp = () => {
             location,
             salary,
             company: {
-                name : '',
-                description  : '',
-                contactEmail : '',
-                contactPhone : '',
+                name : companyName,
+                description  : companyDescription,
+                contactEmail,
+                contactPhone,
             },
         };
-    
 
         console.log(newJob);
         jobService.addJob(newJob);
 
+        toast.success('Job created successfull');
+
         navigate('/jobs');
-
-
     }
-
-//   export  interface Company {
-//     name : string;
-//     description : string;
-//     contactEmail : string;
-//     contactPhone : string;
-//   }
-
 
   return (
     <section className='bg-indigo-700 min-h-[960px]'>
@@ -107,17 +104,18 @@ const AddJobComp = () => {
                             id="descripton"
                             name="description"
                             className="border rounded font-bold w-full py-2 px-3 mb-2"
-                            placeholder="add some description"
+                            placeholder='Add any job duties, expectations, requirements, etc'
                             rows={4}
                             value={description}
                             onChange={(e) => setDescription(e.target.value)}
                             />
                     </div>
-                    .block
-                    <div className='mb-4'>
+
+            {/* Salary */}
+            <div className='mb-4'>
               <label
                 htmlFor='type'
-                className='block text-gray-700 font-bold mb-2'
+                className='block text-blue-700 font-bold mb-2'
               >
                 Salary
               </label>
@@ -146,7 +144,7 @@ const AddJobComp = () => {
             {/* Location */}
             <div className="mb-4">
                         <label htmlFor='location'
-                            className="block text-blue-700 font-bold mb-2">
+                            className="text-blue-700 font-bold mb-2">
                             Job location
                         </label>
                         <input 
@@ -157,11 +155,86 @@ const AddJobComp = () => {
                             placeholder='Job location'
                             required
                             value={location}
-                            onChange={(e) => setTitle(e.target.value)}
+                            onChange={(e) => setLocation(e.target.value)}
                             />
                     </div>
 
-                    <div>
+                    <div className='mb-4'>
+              <label
+                htmlFor='company'
+                className='block text-blue-700 font-bold mb-2'
+              >
+                Company Name
+              </label>
+              <input
+                type='text'
+                id='company'
+                name='company'
+                className='border rounded w-full py-2 px-3'
+                placeholder='Company Name'
+                value={companyName}
+                onChange={(e) => setCompanyName(e.target.value)}
+              />
+            </div>
+
+            <div className='mb-4'>
+              <label
+                htmlFor='company_description'
+                className='block text-blue-700 font-bold mb-2'
+              >
+                Company Description
+              </label>
+              <textarea
+                id='company_description'
+                name='company_description'
+                className='border rounded w-full py-2 px-3'
+                rows= {4}
+                placeholder='What does your company do?'
+                value={companyDescription}
+                onChange={(e) => setCompanyDescription(e.target.value)}
+              ></textarea>
+            </div>
+
+            {/* Contact Email */}
+            <div className='mb-4'>
+              <label
+                htmlFor='contact_email'
+                className='block text-blue-700 font-bold mb-2'
+              >
+                Contact Email
+              </label>
+              <input
+                type='email'
+                id='contact_email'
+                name='contact_email'
+                className='border rounded w-full py-2 px-3'
+                placeholder='Email address for applicants'
+                required
+                value={contactEmail}
+                onChange={(e) => setContactEmail(e.target.value)}
+              />
+
+              {/* Contact Phone */}
+            </div>
+            <div className='mb-4'>
+              <label
+                htmlFor='contact_phone'
+                className='block text-blue-700 font-bold mb-2'
+              >
+                Contact Phone
+              </label>
+              <input
+                type='tel'
+                id='contact_phone'
+                name='contact_phone'
+                className='border rounded w-full py-2 px-3'
+                placeholder='Optional phone for applicants'
+                value={contactPhone}
+                onChange={(e) => setContactPhone(e.target.value)}
+              />
+            </div>
+
+           <div>
               <button
                 className='bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline'
                 type='submit'
@@ -171,6 +244,11 @@ const AddJobComp = () => {
             </div>
 
                 </form>
+                <Link  
+                  to='/jobs'  
+                  className='text-white text-center bg-orange-500 hover:bg-orange-600 font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block'>
+                  Cancel
+                </Link>
             </div>
         </div>
 
