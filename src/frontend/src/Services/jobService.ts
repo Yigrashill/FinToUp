@@ -25,7 +25,6 @@ class JobService {
     };
 
     public addJob = async (newJob : Job ) => {
-
         try {
             const request = await axios.post<Job>(this.baseUrl, newJob, {
                 headers: {
@@ -39,6 +38,21 @@ class JobService {
         }
       };
 
+    public updateJob = async (updateJob : Job) => {
+        try {
+            const request = await axios.put<Job>(this.baseUrl + `/${updateJob.id}`, updateJob, {
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+                });
+                return request.data;
+        }
+        catch(error) {
+            throw new Error('Error edit job');
+        }
+    };
+      
+    
       public deleteJob = async (jobId : number) => {
         try{
             await axios.delete(this.baseUrl + `/${jobId}`);

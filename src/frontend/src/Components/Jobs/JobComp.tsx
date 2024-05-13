@@ -13,7 +13,6 @@ const JobComp = () => {
   useEffect(() => {
       const fetchJob = async () => {
           try {
-            console.log(id);
               const data = await jobService.getJob(id);
               setJob(data);
           }
@@ -32,9 +31,7 @@ const JobComp = () => {
       if (!confirm ) return;
 
       await jobService.deleteJob(jobId);
-      
       toast.error('Job deleted successfull');
-
       navigate('/jobs');
   }
 
