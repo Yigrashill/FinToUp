@@ -129,11 +129,10 @@ Sprint 8 (June 10 - June 24) - Work after the contest
 
 Status | Name
 :---:| ---
-☑️| TASK-112 Lern Tailwind CSS 
-☑️| TASK-113 Use Tailwind CSS 
 ⬜️| TASK-109 Create base Finance Interface.
 ⬜️| TASK-110 Render Base Finance Component
 ⬜️| TASK-111 Create Base Finance List Component
+⬜️| TASK-112 Create Base Finance List Component
 
 
 ### 🔵 Sprint 4  (April 15, 2024 → May 13, 2024)
@@ -145,6 +144,8 @@ Status | Name
 ✅| TASK-107 Update gitignore.
 ✅| TASK-108 Lern About Reack 18.
 ✅| TASK-112 Lern Tailwind CSS 
+✅| TASK-112 Lern Tailwind CSS 
+✅| TASK-113 Use Tailwind CSS 
 
 
 ### 🔵 Sprint 3  (April 1, 2024 → April 14, 2024)
