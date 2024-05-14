@@ -124,7 +124,7 @@ Sprint 8 (June 10 - June 24) - Work after the contest
     A new way of displaying information depending on the user and finances within a month
 
 
-### 🔵 Sprint 4  (May 14, 2024 → May 31, 2024)
+### 🔵 Sprint 5  (May 14, 2024 → May 31, 2024)
 
 
 Status | Name
