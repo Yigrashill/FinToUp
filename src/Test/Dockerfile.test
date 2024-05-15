@@ -1,9 +1,0 @@
-FROM mcr.microsoft.com/dotnet/sdk:8.0
-
-WORKDIR /app
-
-COPY . ./
-
-RUN dotnet restore ./src/Test/Test.csproj
-
-CMD ["dotnet", "test", "./src/Test/Test.csproj"]
