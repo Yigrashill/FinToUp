@@ -1,3 +1,4 @@
+
 name: Continuous Integration
 
 on:
@@ -15,12 +16,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Build and Publish Docker Image
-        run: |
-          docker build -t myapp-build -f ./src/BackEnd/Dockerfile.build .
-          docker create --name myapp-container myapp-build
-          docker cp myapp-container:/app/output ./output
-          docker rm myapp-container
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore dependencies
+        run: dotnet restore ./src/BackEnd/FinToUp.sln
+
+      - name: Build the project
+        run: dotnet build ./src/BackEnd/FinToUp.sln --configuration Release
+
+      - name: Cache built application
+        uses: actions/cache@v4
+        with:
+          path: ./src/BackEnd/
+          key: ${{ runner.os }}-built-app-${{ github.sha }}
 
   Test_Backend:
     needs: Build_Backend
@@ -30,11 +41,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Copy Built Artifacts
-        run: |
-          mkdir -p ./src/BackEnd/
-          cp -r ./output/* ./src/BackEnd/
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
 
-      - name: Build and Test Docker Image
-        run: |
-          docker build -t myapp-test -f ./src/Test/Dockerfile.test .
+      - name: Restore build cache
+        uses: actions/cache@v4
+        with:
+          path: ./src/BackEnd/
+          key: ${{ runner.os }}-built-app-${{ github.sha }}
+
+      - name: Run tests
+        run: dotnet test ./src/Test/Test.csproj
