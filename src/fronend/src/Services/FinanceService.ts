@@ -4,7 +4,7 @@ import { Finance } from "../Types/Interface/Finance";
 class FinanceService{
     private baseUrl: string = 'http://localhost:5000/api/finances';
 
-    public async getJobs() : Promise<Finance[]> {
+    public async getGetFinances() : Promise<Finance[]> {
         try {
             const response = await axios.get<Finance[]>(this.baseUrl);
             return response.data;

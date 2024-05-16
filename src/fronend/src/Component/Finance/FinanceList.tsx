@@ -47,8 +47,3 @@ const FinanceList = () => {
 }
 
 export default FinanceList
-
-// const JobList: React.FC<JobListProps> = ({isHome}) => {
-
-//     const [jobs, setJobs] = useState<Job[]>([]);
-//     const [loading, setLoading] = useState(false);
