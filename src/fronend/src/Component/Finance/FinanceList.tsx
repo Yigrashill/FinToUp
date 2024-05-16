@@ -9,7 +9,7 @@ const FinanceList = () => {
     useEffect(() => {
         const fetchFinances = async () => {
             try {
-                const data  = await financeService.getJobs();
+                const data  = await financeService.getFinances();
                 setFinances(data);
             }
             catch (error) {
