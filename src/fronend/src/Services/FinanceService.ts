@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Finance } from "../Types/Interface/Finance";
+import { Finance } from "../Types/Interfaces/Finance/Finance";
 
 class FinanceService{
     private baseUrl: string = 'http://localhost:5000/api/finances';

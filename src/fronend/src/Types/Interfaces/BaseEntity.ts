@@ -3,4 +3,3 @@ export interface BaseEntity {
     createrd?: string; 
     updated?: string; 
 }
-
