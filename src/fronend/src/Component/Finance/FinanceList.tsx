@@ -21,11 +21,11 @@ const FinanceList = () => {
     }, []);
 
   return (
-        <div className=" bg-indigo-700">
-            <h2 className="text-3xl font-bold text-white mb-6 ml-36">
+        <div className="container-xl lg:container m-auto bg-white">
+            <h2 className="text-3xl font-bold text-indigo-700 mb-6 ml-36">
                 My Finances:
             </h2>
-            <div className="text-center mt-36 ">
+            <div className="grid grid-col-1 md:grid-cols-4 gap-6 ">
             {
                 finances.map((finance : Finance ) => (
                     <FinanceItem key={finance.id} finance={finance} />
