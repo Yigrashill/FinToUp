@@ -11,14 +11,12 @@ const FinanceItem: React.FC<FinanceProps> = ({ finance }) => {
     finance.financeType === FinanceType.Assets ?  (
       <div id={`finance-${finance.id}`} className="bg-blue-100 rounded-xl mb-4 p-4 shadow-md relative">
       <div className="mb-6">
-        <div className="text-xl font-bold text-gray-800 my-2">
+        <div className="font-bold text-gray-800 my-2">
            {finance.title}
         </div>
-        {
             <h3 className="text-xl text-indigo-400 font-bold">
                 {getFinanceTypeName(finance.financeType)}
             </h3>
-        }
       </div>
         { finance.amount && 
           <p className="text-gray-800 font-semibold">
@@ -42,27 +40,23 @@ const FinanceItem: React.FC<FinanceProps> = ({ finance }) => {
           <div className="text-xl font-bold text-gray-800 my-2">
              {finance.title}
           </div>
-          
-       
-                <h3 className="text-xl text-red-400 font-bold">
-                   {getFinanceTypeName(finance.financeType)}
-                </h3>
-         
-          
+            <h3 className="text-xl text-red-400 font-bold">
+               {getFinanceTypeName(finance.financeType)}
+           </h3>
         </div>
           { finance.amount && 
-            <p className="text-gray-800 font-semibold">
-                Amount: { finance.amount} zł
-            </p>}
+            <div className="text-gray-800 text-green font-semibold">
+              { finance.amount} zł
+            </div>}
           { finance.createrd && 
-            <p> 
+            <div> 
               Created: {formatDate(finance.createrd)}
-            </p>
+            </div>
           }
           { finance.updated &&
-          <p>
+          <div>
               Updated: {formatDate(finance.updated)}
-              </p>
+          </div>
           }
       </div>
 
