@@ -6,67 +6,51 @@ import { FinanceType } from '../../Types/Enum/FinanceType';
 const FinanceItem: React.FC<FinanceProps> = ({ finance }) => {
   
   return (
-    <>
-    {
-    finance.financeType === FinanceType.Assets ?  (
-      <div id={`finance-${finance.id}`} className="bg-blue-100 rounded-xl mb-4 p-4 shadow-md relative">
-      <div className="mb-6">
-        <div className="font-bold text-gray-800 my-2">
-           {finance.title}
-        </div>
-            <h3 className="text-xl text-indigo-400 font-bold">
-                {getFinanceTypeName(finance.financeType)}
-            </h3>
-      </div>
-        { finance.amount && 
-          <p className="text-gray-800 font-semibold">
-              Amount: { finance.amount} zł
-          </p>}
-        { finance.createrd && 
-          <p> 
-            Created: {formatDate(finance.createrd)}
-          </p>
-        }
-        { finance.updated &&
-        <p>
-            Updated: {formatDate(finance.updated)}
-            </p>
-        }
-    </div>
-
-      ) : (
-        <div id={`finance-${finance.id}`} className="bg-red-200 rounded-xl mb-4 p-4 shadow-md relative">
-        <div className="mb-6">
-          <div className="text-xl font-bold text-gray-800 my-2">
-             {finance.title}
-          </div>
-            <h3 className="text-xl text-red-400 font-bold">
-               {getFinanceTypeName(finance.financeType)}
-           </h3>
-        </div>
-          { finance.amount && 
-            <div className="text-gray-800 text-green font-semibold">
-              { finance.amount} zł
-            </div>}
-          { finance.createrd && 
-            <div> 
-              Created: {formatDate(finance.createrd)}
+      <tr>
+        <td className="p-4 border-b border-blue-gray-50">
+            <div className="flex items-center gap-3">
+                <p className="block antialiased font-sans text-sm leading-normal text-blue-900 font-bold">
+                { finance.title }
+                </p>
             </div>
-          }
-          { finance.updated &&
-          <div>
-              Updated: {formatDate(finance.updated)}
-          </div>
-          }
-      </div>
+        </td>
+        <td className="p-4 border-b border-blue-gray-50">
+            <p className="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-normal">
+                { finance.amount } zł
+            </p>
+        </td>
 
-      )
-    }
+        {
+           finance.financeType === FinanceType.Assets ?  (
+            <td className="p-4 border-b border-blue-50">
+            <div className="w-max">
+              <div className="relative grid items-center font-sans font-bold uppercase whitespace-nowrap select-none bg-green-500/20 text-green-900 py-1 px-2 text-xs rounded-md">
+                <span className="">
+                  { getFinanceTypeName(finance.financeType) }
+                </span>
+              </div>
+            </div>
+          </td>
+           ):(
+            <td className="p-4 border-b border-blue-50">
+            <div className="w-max">
+              <div className="relative grid items-center font-sans font-bold uppercase whitespace-nowrap select-none bg-red-500/20 text-red-900 py-1 px-2 text-xs rounded-md">
+                <span className="">
+                  { getFinanceTypeName(finance.financeType) }
+                </span>
+              </div>
+            </div>
+          </td>
+           )
+        }
 
+        <td className="p-4 border-b border-blue-gray-50">
+            <p className="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-normal">
+               { formatDate(finance.createrd) }
+            </p>
+        </td>
 
-       
-   
-    </>
+      </tr>
   )
 }
 
