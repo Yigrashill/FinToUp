@@ -22,51 +22,34 @@ const FinanceList = () => {
     }, []);
 
   return (
-    <div className="h-screen bg-slate-200 overflow-hidden flex items-center justify-center">
-        <div className="flex min-h-screen items-center justify-center bg-white">
-            <div className="p-6 overflow-scroll px-0">
-                <table className="w-full min-w-max table-auto text-left">
-                    <thead>
-                    <tr>
-                        <th className="border-y border-blue-gray-100 p-4">
-                            <p className="block antialiased font-sens text-sm text-blue-gray-900 font-normal leading-none opacity-700">
-                                Transaction
-                            </p>
-                        </th>
-                        <th className="border-y border-blue-gray-100 bg-blue-gray50/50 p-4">
-                            <p className="block antialiased font-sens text-sm text-blue-gray-900 font-normal leading-none opacity-700">
-                                Amount
-                            </p>
-                        </th>
-                        <th className="border-y border-blue-gray-100 bg-blue-gray50/50 p-4">
-                            <p className="block antialiased font-sens text-sm text-blue-gray-900 font-normal leading-none opacity-700">
-                                TYPE
-                            </p>
-                        </th>
-                        <th className="border-y border-blue-gray-100 bg-blue-gray50/50 p-4">
-                            <p className="block antialiased font-sens text-sm text-blue-gray-900 font-normal leading-none opacity-700">
-                                Date
-                            </p>
-                        </th>
-                        {/* <th className="border-y border-blue-gray-100 bg-blue-gray50/50 p-4">
-                            <p className="block antialiased font-sens text-sm text-blue-gray-900 font-normal leading-none opacity-700">
-                                
-                            </p>
-                        </th> */}
-                    </tr>
-                    </thead>
-                    <tbody>
-                            {
-                                finances.map((finance : Finance) => (
-                                    <FinanceItem key={finance.id} finance={finance} />
-                                ))
-                            }
-                      
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        </div>
+    <div className="bg-slate-200  items-center justify-center">
+
+        <table className="min-w-full divide-y divide-gray-200 overflow-x-auto">
+            <thead className="bg-gray-50">
+                <tr>
+                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        Title
+                    </th>
+                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        Amount
+                    </th>
+                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        Type
+                    </th>
+                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        Date
+                    </th>
+                </tr>
+            </thead>
+            <tbody className="bg-white divide-y divide-gray-200">
+            {
+                finances.map((finance : Finance) => (
+                    <FinanceItem key={finance.id} finance={finance} />
+                ))
+            }
+            </tbody>
+            </table>
+    </div>
 
   )
 }

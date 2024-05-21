@@ -7,13 +7,14 @@ const FinanceItem: React.FC<FinanceProps> = ({ finance }) => {
   
   return (
       <tr>
-        <td className="p-4 border-b border-blue-gray-50">
-            <div className="flex items-center gap-3">
-                <p className="block antialiased font-sans text-sm leading-normal text-blue-900 font-bold">
+            <td className="px-6 py-4 whitespace-nowrap">
+              <div className="flex items-center">
+              <div className="text-sm font-medium text-gray-900">
                 { finance.title }
-                </p>
+              </div>
             </div>
         </td>
+
         <td className="p-4 border-b border-blue-gray-50">
             <p className="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-normal">
                 { finance.amount } zł
