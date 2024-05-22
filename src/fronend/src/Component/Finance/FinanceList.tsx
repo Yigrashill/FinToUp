@@ -7,6 +7,7 @@ import { formatDate } from '../../Services/UtilityService';
 const FinanceList = () => {
 
     const [finances, setFinances] = useState<Finance[]>([]);
+    const [items, setItems] = useState<Finance[]>([]);
 
     useEffect(() => {
         const fetchFinances = async () => {
@@ -18,13 +19,23 @@ const FinanceList = () => {
                 console.log(error);
             }
         }   
+
+        const getitems = async () => {
+            try {
+                const data = await financeService.getFinances();
+                setFinances(data);
+            }
+            catch (error) {
+                console.log(error);
+            }
+        }
         fetchFinances();
+        getitems();        
     }, []);
 
   return (
     <div className="bg-slate-200  items-center justify-center">
-
-        <table className="min-w-full divide-y divide-gray-200 overflow-x-auto">
+        {/* <table className="min-w-full divide-y divide-gray-200 overflow-x-auto">
             <thead className="bg-gray-50">
                 <tr>
                     <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -48,9 +59,16 @@ const FinanceList = () => {
                 ))
             }
             </tbody>
-            </table>
-    </div>
+            </table> */}
 
+            <div>
+                {
+                    items.map((item : Finance ) => (
+                        <div>Item: {item.id}</div>
+                    ))
+                }
+            </div>
+    </div>
   )
 }
 
