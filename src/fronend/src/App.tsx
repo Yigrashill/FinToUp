@@ -6,7 +6,9 @@ import FinanceList from './Component/Finance/FinanceList';
 function App() {
   return (
     <div className="App">
+      <div className="container">
       <FinanceList />
+      </div>
     </div>
   );
 }
