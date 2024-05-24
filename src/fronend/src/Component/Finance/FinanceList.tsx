@@ -25,7 +25,7 @@ const FinanceList = () => {
     }, []);
 
   return (
-    <div className="bg-slate-200  items-center justify-center">
+    <div className="w-full flex flex-col-reverse items-center justify-center">
          <table className="min-w-full divide-y divide-gray-200 overflow-x-auto">
             <thead className="bg-gray-50">
                 <tr>
