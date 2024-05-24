@@ -1,78 +1,38 @@
 import React, { useState } from 'react'
 import { FinanceProps } from '../../Types/Interfaces/Finance/FinanceProps';
 import { formatDate, getFinanceTypeName } from '../../Services/UtilityService';
-import { FinanceType } from '../../Types/Enum/FinanceType';
+import FinanceTypeComp from './FinanceTypeComp';
 
 const FinanceItem: React.FC<FinanceProps> = ({ finance }) => {
   
   return (
-    <>
-    {
-    finance.financeType === FinanceType.Assets ?  (
-      <div id={`finance-${finance.id}`} className="bg-blue-100 rounded-xl mb-4 p-4 shadow-md relative">
-      <div className="mb-6">
-        <div className="text-xl font-bold text-gray-800 my-2">
-           {finance.title}
-        </div>
-        {
-            <h3 className="text-xl text-indigo-400 font-bold">
-                {getFinanceTypeName(finance.financeType)}
-            </h3>
-        }
-      </div>
-        { finance.amount && 
-          <p className="text-gray-800 font-semibold">
-              Amount: { finance.amount} zł
-          </p>}
-        { finance.createrd && 
-          <p> 
-            Created: {formatDate(finance.createrd)}
-          </p>
-        }
-        { finance.updated &&
-        <p>
-            Updated: {formatDate(finance.updated)}
+      <tr>
+            
+        <td className="px-6 py-4 whitespace-nowrap">
+            <div className="flex items-center">
+              <div className="text-sm font-medium text-gray-900">
+                { finance.title }
+              </div>
+            </div>
+        </td>
+
+        <td className="p-4 border-b border-blue-gray-50">
+            <p className="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-normal">
+                { finance.amount } zł
             </p>
-        }
-    </div>
+        </td>
 
-      ) : (
-        <div id={`finance-${finance.id}`} className="bg-red-200 rounded-xl mb-4 p-4 shadow-md relative">
-        <div className="mb-6">
-          <div className="text-xl font-bold text-gray-800 my-2">
-             {finance.title}
-          </div>
-          
-       
-                <h3 className="text-xl text-red-400 font-bold">
-                   {getFinanceTypeName(finance.financeType)}
-                </h3>
-         
-          
-        </div>
-          { finance.amount && 
-            <p className="text-gray-800 font-semibold">
-                Amount: { finance.amount} zł
-            </p>}
-          { finance.createrd && 
-            <p> 
-              Created: {formatDate(finance.createrd)}
+        <td className="p-4 border-b border-blue-50">
+          <FinanceTypeComp financeType={finance.financeType} />
+        </td>
+
+        <td className="p-4 border-b border-blue-gray-50">
+            <p className="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-normal">
+               { formatDate(finance.createrd) }
             </p>
-          }
-          { finance.updated &&
-          <p>
-              Updated: {formatDate(finance.updated)}
-              </p>
-          }
-      </div>
+        </td>
 
-      )
-    }
-
-
-       
-   
-    </>
+      </tr>
   )
 }
 
