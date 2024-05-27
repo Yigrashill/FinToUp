@@ -19,8 +19,6 @@ const FinanceList = () => {
                 console.log(error);
             }
         }   
-
-
         fetchFinances();
     }, []);
 
