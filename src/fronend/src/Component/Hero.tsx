@@ -11,9 +11,6 @@ const Hero = ({
                 <h1 className="text-4xl font-extrabold sm:text-5xl md:text-6xl">
                     {title}
                 </h1>
-                <p className="my-4 text-xl">
-                    {subtilte}
-                </p>
             </div>
         </div>
     </section>
