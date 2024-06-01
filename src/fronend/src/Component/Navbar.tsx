@@ -11,7 +11,7 @@ const Navbar = () => {
                   <div className='flex text-zinc-200  items-center justity-center md:items-strecht md:justify-start'>
                       <Link to='/home' className='flex flex-shrink=0 items-center mr-4 ' >
                       <span className='hidden md:block bg-gray-950 hover:bg-gray-900 p-2 px-6 rounded-3xl text-2xl font-bold ml-2'>
-                          Fin To Up
+                          Fin To Up 2
                       </span>
                       </Link>
                       <div className='md:ml-auto justify-center font-sans font-bold'>
