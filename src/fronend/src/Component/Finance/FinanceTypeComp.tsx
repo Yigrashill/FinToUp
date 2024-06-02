@@ -7,14 +7,14 @@ import { FinanceType } from '../../Types/Enum/FinanceType';
  const FinanceTypeComp: React.FC<FinanceTypeProps> = ({ financeType }) => {
 
   return (
-        <div className="items-center font-sans font-bold uppercase py-4 px-10 min-w-10">
+        <div className="items-center font-sans font-bold uppercase min-w-10  text-gray-200">
           {
             financeType === FinanceType.Assets ? (
-              <span className=' bg-green-800 text-gray-200'>
+              <span className='py-1 bg-green-800'>
                 { getFinanceTypeName(financeType) }
               </span>
             ) :(
-              <span className=' bg-red-800 text-gray-200'>
+              <span className='py-1 bg-red-800'>
                 { getFinanceTypeName(financeType) }
               </span>
             )
