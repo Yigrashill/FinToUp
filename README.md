@@ -130,7 +130,8 @@ Sprint 8 (June 10 - June 24) - Work after the contest
 Status | Name
 :---:| ---
 ☑️| TASK-109 Create base Finance Interface.
-⬜️| TASK-110 Render Base Finance Component
+☑️
+TASK-110 Render Base Finance Component
 ⬜️| TASK-111 Create Base Finance List Component
 ⬜️| TASK-112 Create Base Finance List Component
 
