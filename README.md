@@ -90,7 +90,7 @@ Sprint 4 (April 15 - April 28)
     Creation of simple frontend tests
 
 Sprint 5 (April 29 - May 12) - Note, May Holiday
-
+I m in Spain and i lost my mind 😎
     Creation of Axios connections to Rest API
     Discussion on the need to test Axios on the frontend side
     Integration tests
