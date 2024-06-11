@@ -90,7 +90,7 @@ Sprint 4 (April 15 - April 28)
     Creation of simple frontend tests
 
 Sprint 5 (April 29 - May 12) - Note, May Holiday
-
+I m in Spain and i lost my mind 😎
     Creation of Axios connections to Rest API
     Discussion on the need to test Axios on the frontend side
     Integration tests
@@ -121,7 +121,9 @@ Sprint 8 (June 10 - June 24) - Work after the contest
 
     Use of a new REST API on the frontend side
     User authentication and authorization
-    A new way of displaying information depending on the user and finances within a month
+    A new way of displaying information depending on the user and finances within a month. 
+
+    I lost mind i Spalin 😅 😎😎 🤣
 
 
 ### 🔵 Sprint 5  (May 14, 2024 → May 31, 2024)
@@ -130,7 +132,8 @@ Sprint 8 (June 10 - June 24) - Work after the contest
 Status | Name
 :---:| ---
 ☑️| TASK-109 Create base Finance Interface.
-⬜️| TASK-110 Render Base Finance Component
+☑️
+TASK-110 Render Base Finance Component
 ⬜️| TASK-111 Create Base Finance List Component
 ⬜️| TASK-112 Create Base Finance List Component
 

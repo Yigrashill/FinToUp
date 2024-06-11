@@ -19,31 +19,29 @@ const FinanceList = () => {
                 console.log(error);
             }
         }   
-
-
         fetchFinances();
     }, []);
 
   return (
-    <div className="w-full flex flex-col-reverse items-center justify-center">
-         <table className="min-w-full divide-y divide-gray-200 overflow-x-auto">
-            <thead className="bg-gray-50">
+    <div className="w-full flex flex-col-reverse items-center justify-center pb-8">
+         <table className="min-w-full bg-gray-800 divide-y divide-gray-300 overflow-x-auto">
+            <thead className="">
                 <tr>
-                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
                         Title
                     </th>
-                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
                         Amount
                     </th>
-                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
                         Type
                     </th>
-                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
                         Date
                     </th>
                 </tr>
             </thead>
-            <tbody className="bg-white divide-y divide-gray-200">
+            <tbody className="divide-y divide-gray-800">
             {
                 finances.map((finance : Finance) => (
                     <FinanceItem key={finance.id} finance={finance} />
