@@ -1,7 +1,43 @@
-# FinToUp
+
 
 ![](https://github.com/Yigrashill/FinToUp/blob/main/src/Images/Logo/FinToupSmall.png)
 
+
+
+# Summary 
+
+## Time to Summarize the Project: What Went Well and What Went Completely Wrong
+
+
+## Good Things in the Project:
+
+1. App Idea: I started a project that I genuinely needed. I had been thinking for a while about something that could help me with management. Unexpected expenses often occur, and as a result, I don't know where and how much I spent. For example, subscriptions to platforms 😀.
+2. Starting with Planning: Using 3-week sprints where I had specific tasks to complete and deliver.
+3. Integration of Git with Notion: I planned my sprints using Notion.
+4. Starting the Day with Preparation: Preparing the appropriate branch and completing tasks. This morning routine helped me deliver the most.
+5. Creating an API: The API had a favorable division into layers according to the CQRS pattern.
+6. Writing Various Types of Tests: Including integration tests, unit tests, and tests using an in-memory database.
+7. Creating a DevOps Environment: Along with a CI process that builds and tests the application based on submitted pull requests.
+8. Reaching and Surviving 100 Commits: I'm not interested in rewards; it's more about motivation for me, proving that I accomplished something.
+
+## Bad Things in the Project:
+
+1. Very Weak Domain Model: We practically operate within a single class.
+2. Initial Sprint Delivery: This went well initially, but personal life heavily impacted work and organization. After the 4th sprint, I completely lost track of what I was doing and in what order.
+3. Impact of Personal Life and Daily Work: After 10 hours at my regular job, I had little desire to use any IDE.
+4. API and React Application Integration: I only created one list that fetched data, without details.
+5. Getting Lost in Application Design: When I had an idea for the application view, the daily coding time would end. Returning the next day caused confusion, leading to a mess in a single simple view. These 15-20 minute code sessions in React caused chaos.
+6. Lack of Simple Instructions: There's no straightforward guide on how to run the application. A more experienced person might look at the code and build it, but someone less experienced probably won't manage.
+7. No CD Process: I could have created a CD process, set up hosting, and monitored the results.
+
+## Conclusions:
+
+1. Working with Planned Tasks: It's beneficial.
+2. Consistent Work Time: It's good to have a fixed time for work.
+3. Longer Blocks of Time: Having a continuous block of time to write is more effective for me than shorter periods.
+4. I will continue the project.
+
+# FinToUp
 
 ## Who I m
 Hi, I'm Tomasz, and I'm a .NET Developer. However, I feel like I've been stuck in the older .NET Framework stack, so I'm want to learn new things like .NET Core 8.0 and React 18. Additionally, I'm interested in expanding my knowledge in DevOps CI/CD, including Docker, pipelines, and more.
@@ -90,7 +126,7 @@ Sprint 4 (April 15 - April 28)
     Creation of simple frontend tests
 
 Sprint 5 (April 29 - May 12) - Note, May Holiday
-
+I m in Spain and i lost my mind 😎
     Creation of Axios connections to Rest API
     Discussion on the need to test Axios on the frontend side
     Integration tests
@@ -121,7 +157,9 @@ Sprint 8 (June 10 - June 24) - Work after the contest
 
     Use of a new REST API on the frontend side
     User authentication and authorization
-    A new way of displaying information depending on the user and finances within a month
+    A new way of displaying information depending on the user and finances within a month. 
+
+    I lost mind i Spalin 😅 😎😎 🤣
 
 
 ### 🔵 Sprint 5  (May 14, 2024 → May 31, 2024)
@@ -130,9 +168,9 @@ Sprint 8 (June 10 - June 24) - Work after the contest
 Status | Name
 :---:| ---
 ☑️| TASK-109 Create base Finance Interface.
-⬜️| TASK-110 Render Base Finance Component
-⬜️| TASK-111 Create Base Finance List Component
-⬜️| TASK-112 Create Base Finance List Component
+☑️| TASK-110 Render Base Finance Component
+☑️| TASK-111 Create Base Finance List Component
+☑️| TASK-112 Create Base Finance List Component
 
 
 ### 🔵 Sprint 4  (April 15, 2024 → May 13, 2024)

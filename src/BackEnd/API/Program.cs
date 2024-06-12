@@ -32,6 +32,16 @@ builder.Host.UseSerilog((context, configuration) =>
         .WriteTo.Console();
 });
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowSpecificOrigin", builder =>
+    {
+        builder.WithOrigins("http://localhost:3000")
+               .AllowAnyHeader()
+               .AllowAnyMethod();
+    });
+});
+
 var app = builder.Build();
 
 app.UseMiddleware<ErrorHandeling>();
@@ -49,6 +59,8 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+app.UseCors("AllowSpecificOrigin");
+
 
 app.Run();
 
